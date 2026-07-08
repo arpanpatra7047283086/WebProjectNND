@@ -56,10 +56,10 @@ export default function TermsAndConditions() {
       <main className="relative flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         {/* Animated Background Blobs */}
         <div className="absolute inset-0 -z-20 overflow-hidden">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob -z-10"></div>
-          <div className="absolute -top-20 right-0 w-96 h-96 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 -z-10"></div>
-          <div className="absolute -bottom-32 left-1/4 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000 -z-10"></div>
-          <div className="absolute -bottom-32 right-1/4 w-96 h-96 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 -z-10"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full filter blur-3xl opacity-10 animate-blob -z-10"></div>
+          <div className="absolute -top-20 right-0 w-96 h-96 bg-accent rounded-full filter blur-3xl opacity-10 animate-blob animation-delay-2000 -z-10"></div>
+          <div className="absolute -bottom-32 left-1/4 w-96 h-96 bg-primary rounded-full filter blur-3xl opacity-10 animate-blob animation-delay-4000 -z-10"></div>
+          <div className="absolute -bottom-32 right-1/4 w-96 h-96 bg-accent rounded-full filter blur-3xl opacity-10 animate-blob animation-delay-2000 -z-10"></div>
         </div>
 
 
@@ -119,14 +119,14 @@ export default function TermsAndConditions() {
                   </nav>
                 </div>
 
-                <div className="p-8 bg-slate-900 rounded-3xl text-white shadow-2xl relative overflow-hidden group">
+                <div className="p-8 bg-secondary border border-border rounded-3xl text-foreground shadow-2xl relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-primary/30 transition-colors" />
                   <ShieldAlert className="w-12 h-12 mb-6 text-primary" />
                   <p className="text-lg font-black mb-3">Legal Assistance</p>
                   <p className="text-sm text-slate-400 leading-relaxed mb-6">Need clarification on specific clauses? Our legal department is ready to assist you.</p>
                   <a
                     href="mailto:legal@esmartpay.in"
-                    className="flex items-center justify-center gap-2 w-full py-3 bg-white text-slate-900 rounded-xl font-black text-sm hover:bg-slate-50 transition-colors cursor-pointer"
+                    className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-primary-foreground rounded-xl font-black text-sm hover:bg-primary/90 transition-colors cursor-pointer"
                   >
                     Contact Legal                  </a>
                 </div>
@@ -301,7 +301,7 @@ export default function TermsAndConditions() {
               >
                 <h2 className="text-3xl font-black text-slate-900 mb-10 flex items-center gap-5"><span className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary font-black shadow-inner">07</span>Liability & Indemnity</h2>
                 <div className="space-y-8 md:pl-16">
-                  <div className="p-8 bg-slate-900 rounded-[2.5rem] text-white relative overflow-hidden shadow-2xl">
+                  <div className="p-8 bg-secondary border border-border rounded-[2.5rem] text-foreground relative overflow-hidden shadow-2xl">
                     <div className="absolute top-0 right-0 w-40 h-40 bg-primary/20 rounded-full blur-2xl -mr-20 -mt-20" />
                     <div className="relative z-10 flex gap-6 items-start">
                       <AlertTriangle className="w-10 h-10 text-primary shrink-0" />

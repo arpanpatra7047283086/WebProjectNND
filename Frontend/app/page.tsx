@@ -167,6 +167,8 @@ export default function HomePage() {
       <section className="relative min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] glow-primary rounded-full blur-2xl" />
           <motion.div
             animate={{
               x: [0, 50, 0],
@@ -405,7 +407,7 @@ export default function HomePage() {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/30 to-primary/20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/40 border-y border-border">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -414,9 +416,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <p className="text-sm font-semibold text-blue-100 mb-2">Partner with Us for Growth</p>
-            <h2 className="text-4xl font-bold text-white mb-4">Premier Business Solutions</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Partner with Us for Growth</p>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Premier Business Solutions</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Our core mission is to meet the unique needs of our customers by offering a diverse range of beneficial services.
             </p>
           </motion.div>
@@ -432,16 +434,16 @@ export default function HomePage() {
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all"
+                  className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 transition-all"
                 >
                   <motion.div
                     whileHover={{ scale: 1.2 }}
-                    className="w-16 h-16 rounded-lg bg-white/20 flex items-center justify-center mb-6"
+                    className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-6"
                   >
-                    <Icon className="w-8 h-8 text-white" />
+                    <Icon className="w-8 h-8 text-primary" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{solution.title}</h3>
-                  <p className="text-white/80 leading-relaxed">{solution.description}</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{solution.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{solution.description}</p>
                 </motion.div>
               )
             })}
@@ -476,16 +478,16 @@ export default function HomePage() {
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8 }}
-                  className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-2xl p-8 hover:shadow-lg transition-all"
+                  className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all"
                 >
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 10 }}
-                    className="w-14 h-14 rounded-lg bg-primary/30 flex items-center justify-center mb-4"
+                    className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
                   >
                     <Icon className="w-7 h-7 text-primary" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
-                  <p className="text-gray-300">{value.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 text-foreground">{value.title}</h3>
+                  <p className="text-muted-foreground">{value.description}</p>
                 </motion.div>
               )
             })}
@@ -494,7 +496,7 @@ export default function HomePage() {
       </section>
 
       {/* Journey/Timeline Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/30 to-primary/20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/40 border-y border-border">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -503,8 +505,8 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">Our Journey of Growth</h2>
-            <p className="text-white/80">A look at our key milestones and achievements over the years.</p>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Our Journey of Growth</h2>
+            <p className="text-muted-foreground">A look at our key milestones and achievements over the years.</p>
           </motion.div>
 
           <div className="relative">
@@ -514,13 +516,13 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-12 text-center"
+              className="bg-card border border-border rounded-2xl p-12 text-center"
             >
               <div className="mb-4">
-                <span className="text-5xl font-bold text-blue-300">{journeyMilestones[journeyIndex].year}</span>
+                <span className="text-5xl font-bold text-primary">{journeyMilestones[journeyIndex].year}</span>
               </div>
-              <h3 className="text-3xl font-bold text-white mb-3">{journeyMilestones[journeyIndex].title}</h3>
-              <p className="text-white/80 text-lg max-w-2xl mx-auto">{journeyMilestones[journeyIndex].description}</p>
+              <h3 className="text-3xl font-bold text-foreground mb-3">{journeyMilestones[journeyIndex].title}</h3>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{journeyMilestones[journeyIndex].description}</p>
             </motion.div>
 
             <div className="flex justify-center gap-4 mt-8">
@@ -528,7 +530,7 @@ export default function HomePage() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setJourneyIndex((prev) => (prev - 1 + journeyMilestones.length) % journeyMilestones.length)}
-                className="p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition-all"
+                className="p-3 rounded-full bg-secondary border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground transition-all"
               >
                 <ChevronLeft className="w-6 h-6" />
               </motion.button>
@@ -536,7 +538,7 @@ export default function HomePage() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setJourneyIndex((prev) => (prev + 1) % journeyMilestones.length)}
-                className="p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition-all"
+                className="p-3 rounded-full bg-secondary border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground transition-all"
               >
                 <ChevronRight className="w-6 h-6" />
               </motion.button>
@@ -548,7 +550,7 @@ export default function HomePage() {
                   key={i}
                   onClick={() => setJourneyIndex(i)}
                   className={`h-2 rounded-full transition-all ${
-                    i === journeyIndex ? 'bg-white w-8' : 'bg-white/40 w-2'
+                    i === journeyIndex ? 'bg-primary w-8' : 'bg-border w-2'
                   }`}
                   whileHover={{ scale: 1.2 }}
                 />
@@ -661,7 +663,7 @@ export default function HomePage() {
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full md:w-auto px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:shadow-lg transition-all"
+              className="w-full md:w-auto px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:shadow-lg transition-all"
             >
               Submit
             </motion.button>
@@ -670,7 +672,7 @@ export default function HomePage() {
       </section>
 
       {/* Corporate Partners Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -679,14 +681,14 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block mb-4 rounded-full bg-gradient-to-r from-purple-600/10 to-rose-600/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-purple-700">
+            <span className="inline-block mb-4 rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-primary">
               Our Network
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-700 via-fuchsia-600 to-rose-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-foreground">
               Corporate Partners
             </h2>
-            <div className="mx-auto mb-5 h-1 w-24 rounded-full bg-gradient-to-r from-purple-600 to-rose-600" />
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto text-pretty">
+            <div className="mx-auto mb-5 h-1 w-24 rounded-full bg-primary" />
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
               Trusted by leading financial institutions and payment providers
             </p>
           </motion.div>
@@ -704,7 +706,7 @@ export default function HomePage() {
                 transition={{ delay: (index % 4) * 0.05, duration: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
-                className="group flex items-center justify-center rounded-2xl border border-slate-100 bg-white p-6 h-32 shadow-sm transition-shadow duration-300 hover:shadow-lg hover:border-slate-200"
+                className="group flex items-center justify-center rounded-2xl border border-border bg-white p-6 h-32 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/40"
               >
                 <img
                   src={partner.src || '/placeholder.svg'}

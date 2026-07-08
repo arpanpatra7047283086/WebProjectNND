@@ -20,10 +20,10 @@ export function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${
         scrolled
-          ? 'bg-gradient-to-r from-slate-900 to-slate-800 border-b border-primary/30 shadow-lg'
-          : 'bg-gradient-to-r from-slate-900 to-slate-800 border-b border-primary/20 shadow-md'
+          ? 'bg-background/80 border-b border-primary/30 shadow-lg shadow-primary/5'
+          : 'bg-background/60 border-b border-border'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -38,7 +38,7 @@ export function Navbar() {
             className="flex items-center gap-2"
           >
             <Link href="/" className="flex items-center gap-2" aria-label="eSmartPay home">
-              <div className="bg-white rounded-lg px-3 py-2 flex items-center shadow-sm">
+              <div className="bg-white rounded-lg px-3 py-2 flex items-center shadow-sm ring-1 ring-primary/20">
                 <Image
                   src="/esmartpay-logo.png"
                   alt="eSmartPay logo"
@@ -62,11 +62,11 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="px-4 py-2 text-white font-medium text-sm relative group hover:text-blue-200 transition-colors"
+                  className="px-4 py-2 text-foreground/80 font-medium text-sm relative group hover:text-primary transition-colors"
                 >
                   <span className="relative z-10">{item.label}</span>
                   <motion.span
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
@@ -107,7 +107,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <motion.div
-          className="lg:hidden overflow-hidden bg-slate-800/90 backdrop-blur-md border-t border-primary/30"
+          className="lg:hidden overflow-hidden bg-background/95 backdrop-blur-md border-t border-border"
           initial={{ height: 0 }}
           animate={{ height: isOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
@@ -122,7 +122,7 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="block px-4 py-3 text-white font-medium text-sm hover:bg-slate-700/50 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-foreground font-medium text-sm hover:bg-secondary rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

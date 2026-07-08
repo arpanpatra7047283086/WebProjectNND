@@ -24,7 +24,7 @@ const badges = [
 
 export function PartnersSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <section className="bg-background py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -34,7 +34,7 @@ export function PartnersSection() {
           viewport={{ once: true }}
           className="text-center mb-4"
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 text-sm font-semibold text-primary">
             <ShieldCheck className="h-4 w-4" />
             Trusted Network
           </span>
@@ -44,7 +44,7 @@ export function PartnersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-slate-900 text-balance"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-foreground text-balance"
         >
           Our Corporate Partners
         </motion.h2>
@@ -53,7 +53,7 @@ export function PartnersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="mt-4 max-w-2xl mx-auto text-center text-lg text-slate-500 text-pretty leading-relaxed"
+          className="mt-4 max-w-2xl mx-auto text-center text-lg text-muted-foreground text-pretty leading-relaxed"
         >
           We collaborate with India&apos;s leading banks, payment gateways, and fintech
           platforms to deliver secure, reliable financial services at scale.
@@ -69,7 +69,7 @@ export function PartnersSection() {
               transition={{ duration: 0.4, delay: (index % 4) * 0.05 }}
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
-              className="group flex items-center justify-center rounded-2xl border border-slate-100 bg-white p-6 h-32 shadow-sm transition-shadow duration-300 hover:shadow-lg hover:border-slate-200"
+              className="group flex items-center justify-center rounded-2xl border border-border bg-white p-6 h-32 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/40"
             >
               <img
                 src={partner.src || '/placeholder.svg'}
@@ -82,15 +82,15 @@ export function PartnersSection() {
         </div>
 
         {/* Trust badges */}
-        <div className="mt-16 border-t border-slate-100 pt-10">
-          <p className="text-center text-sm font-semibold uppercase tracking-wider text-slate-400 mb-6">
+        <div className="mt-16 border-t border-border pt-10">
+          <p className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-6">
             Security &amp; Compliance
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
             {badges.map((badge) => (
               <div
                 key={badge.name}
-                className="flex items-center justify-center rounded-xl border border-slate-100 bg-white px-8 py-4 shadow-sm"
+                className="flex items-center justify-center rounded-xl border border-border bg-white px-8 py-4 shadow-sm"
               >
                 <img
                   src={badge.src || '/placeholder.svg'}
