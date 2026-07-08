@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Mail, MapPin, Phone, Send, Code2, LinkIcon, Heart, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Footer() {
   const containerVariants = {
@@ -36,10 +37,10 @@ export function Footer() {
     {
       title: 'Services',
       links: [
-        { label: 'Mobile Recharge', href: '/services' },
-        { label: 'Bill Payments', href: '/services' },
-        { label: 'Investments', href: '/services' },
-        { label: 'Insurance', href: '/services' },
+        { label: 'Mobile Recharge', href: '/services/mobile-recharge' },
+        { label: 'Bill Payments', href: '/services/bill-payments' },
+        { label: 'Investments', href: '/services/investments' },
+        { label: 'Insurance', href: '/services/insurance' },
       ],
     },
     {
@@ -48,16 +49,16 @@ export function Footer() {
         { label: 'About Us', href: '/about' },
         { label: 'Become an Agent', href: '/solutions' },
         { label: 'Contact Us', href: '/contact' },
-        { label: 'Careers', href: '#' },
+        { label: 'Careers', href: '/careers' },
       ],
     },
     {
       title: 'Legal',
       links: [
-        { label: 'Privacy Policy', href: '#' },
+        { label: 'Privacy Policy', href: '/privacy-policy' },
         { label: 'Terms & Conditions', href: '/terms-and-conditions' },
-        { label: 'Refund Policy', href: '#' },
-        { label: 'Security', href: '#' },
+        { label: 'Refund Policy', href: '/refund-policy' },
+        { label: 'Security', href: '/security' },
       ],
     },
   ]
@@ -106,13 +107,15 @@ export function Footer() {
         >
           {/* Brand Section */}
           <motion.div variants={itemVariants}>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">$</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">eSmartPay</h3>
-                <p className="text-xs text-blue-200">Financial Platform</p>
+            <div className="mb-4">
+              <div className="inline-flex bg-white rounded-lg px-3 py-2 shadow-sm">
+                <Image
+                  src="/esmartpay-logo.png"
+                  alt="eSmartPay logo"
+                  width={170}
+                  height={44}
+                  className="h-9 w-auto object-contain"
+                />
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">

@@ -4,32 +4,45 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Smartphone, CreditCard, TrendingUp, Shield, ArrowRight, CheckCircle2, Zap, Layers, Code2, Phone, ThumbsUp, Award, Handshake, Users, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
+import { TrendingUp, Shield, ArrowRight, CheckCircle2, Zap, Layers, Code2, Phone, ThumbsUp, Award, Handshake, Users, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 
 const services = [
   {
-    icon: Smartphone,
+    image: '/services/recharges.png',
     title: 'Mobile Recharge',
     description: 'Top up your mobile and DTH services in seconds.',
+    href: '/services/mobile-recharge'
+  },
+  {
+    image: '/services/utility.png',
+    title: 'Utility Payments',
+    description: 'Pay electricity, water, gas, and all utility bills.',
+    href: '/services/bill-payments'
+  },
+  {
+    image: '/services/aeps.png',
+    title: 'AePS',
+    description: 'Aadhaar-enabled payment and cash withdrawal services.',
     href: '/services'
   },
   {
-    icon: CreditCard,
-    title: 'Bill Payments',
-    description: 'Effortlessly handle all your utility and bill payments.',
+    image: '/services/matm.png',
+    title: 'Micro ATM',
+    description: 'Instant cash withdrawal with card-based mATM.',
     href: '/services'
   },
   {
-    icon: TrendingUp,
-    title: 'Investments',
-    description: 'Discover intelligent ways to grow your wealth.',
+    image: '/services/collection.png',
+    title: 'Collection',
+    description: 'Seamless payment collection for your business.',
     href: '/services'
   },
   {
-    icon: Shield,
-    title: 'Insurance',
-    description: 'Protect what matters most with our accessible insurance plans.',
+    image: '/services/pancard.png',
+    title: 'PAN Card',
+    description: 'Apply for new and duplicate PAN cards with ease.',
     href: '/services'
   },
 ]
@@ -222,13 +235,15 @@ export default function HomePage() {
                     Get Started <ArrowRight className="w-5 h-5" />
                   </motion.button>
                 </Link>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 rounded-lg border border-border text-foreground font-semibold hover:bg-secondary transition-all"
-                >
-                  Learn More
-                </motion.button>
+                <Link href="/about">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 rounded-lg border border-border text-foreground font-semibold hover:bg-secondary transition-all"
+                  >
+                    Learn More
+                  </motion.button>
+                </Link>
               </motion.div>
 
               {/* Stats */}
@@ -307,9 +322,8 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => {
-              const Icon = service.icon
               return (
                 <motion.div
                   key={index}
@@ -320,12 +334,18 @@ export default function HomePage() {
                   whileHover={{ y: -5 }}
                 >
                   <Link href={service.href}>
-                    <div className="group bg-card border border-border rounded-xl p-8 h-full cursor-pointer hover:shadow-lg hover:border-primary/50 transition-all">
+                    <div className="group bg-card border border-border rounded-xl p-8 h-full cursor-pointer hover:shadow-lg hover:border-primary/50 transition-all flex flex-col items-center text-center">
                       <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-4"
+                        whileHover={{ scale: 1.05 }}
+                        className="mb-4"
                       >
-                        <Icon className="w-7 h-7 text-primary" />
+                        <Image
+                          src={service.image || "/placeholder.svg"}
+                          alt={service.title}
+                          width={112}
+                          height={112}
+                          className="w-28 h-28 object-contain"
+                        />
                       </motion.div>
                       <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                       <p className="text-muted-foreground">{service.description}</p>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -36,13 +37,16 @@ export function Navbar() {
             whileHover={{ scale: 1.02 }}
             className="flex items-center gap-2"
           >
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">$</span>
-              </div>
-              <div className="hidden sm:flex flex-col">
-                <span className="text-lg font-bold text-white">eSmartPay</span>
-                <span className="text-xs text-blue-200">Financial Platform</span>
+            <Link href="/" className="flex items-center gap-2" aria-label="eSmartPay home">
+              <div className="bg-white rounded-lg px-3 py-2 flex items-center shadow-sm">
+                <Image
+                  src="/esmartpay-logo.png"
+                  alt="eSmartPay logo"
+                  width={150}
+                  height={40}
+                  priority
+                  className="h-8 w-auto object-contain"
+                />
               </div>
             </Link>
           </motion.div>

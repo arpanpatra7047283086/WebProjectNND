@@ -1,28 +1,39 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Smartphone, CreditCard, TrendingUp, Shield, Zap, Lock } from 'lucide-react'
+import Image from 'next/image'
+import { Zap, Lock, TrendingUp } from 'lucide-react'
 
 const services = [
   {
-    icon: Smartphone,
-    title: 'Recharge',
+    image: '/services/recharges.png',
+    title: 'Mobile Recharge',
     description: 'Mobile, DTH, and data card recharges in seconds',
   },
   {
-    icon: CreditCard,
-    title: 'Bill Payment',
-    description: 'Pay all your bills from one platform',
+    image: '/services/utility.png',
+    title: 'Utility Payments',
+    description: 'Pay electricity, water, gas, and all utility bills',
   },
   {
-    icon: TrendingUp,
-    title: 'Investments',
-    description: 'FDs, stocks, mutual funds with algorithmic advice',
+    image: '/services/aeps.png',
+    title: 'AePS',
+    description: 'Aadhaar-enabled payment and cash withdrawal services',
   },
   {
-    icon: Shield,
-    title: 'Insurance',
-    description: 'Car, health, travel insurance with best rates',
+    image: '/services/matm.png',
+    title: 'Micro ATM',
+    description: 'Instant cash withdrawal with card-based mATM',
+  },
+  {
+    image: '/services/collection.png',
+    title: 'Collection',
+    description: 'Seamless payment collection for your business',
+  },
+  {
+    image: '/services/pancard.png',
+    title: 'PAN Card',
+    description: 'Apply for new and duplicate PAN cards with ease',
   },
 ]
 
@@ -86,32 +97,35 @@ export function ServicesSection() {
 
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {services.map((service, index) => {
-            const Icon = service.icon
-            return (
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ y: -5, boxShadow: '0 20px 25px -5 rgba(0, 102, 255, 0.1)' }}
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center"
+            >
               <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -5, boxShadow: '0 20px 25px -5 rgba(0, 102, 255, 0.1)' }}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="mb-4"
+                whileHover={{ scale: 1.05 }}
               >
-                <motion.div
-                  className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg flex items-center justify-center mb-4"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                >
-                  <Icon className="w-6 h-6 text-white" />
-                </motion.div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={service.title}
+                  width={112}
+                  height={112}
+                  className="w-28 h-28 object-contain"
+                />
               </motion.div>
-            )
-          })}
+              <h3 className="text-xl font-bold text-foreground mb-2">{service.title}</h3>
+              <p className="text-muted-foreground">{service.description}</p>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Features */}
