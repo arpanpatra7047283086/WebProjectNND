@@ -151,7 +151,7 @@ export default function HomePage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center bg-gradient-to-b from-blue-50 to-white">
+      <section className="relative min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center bg-gradient-to-b from-white via-blue-50/40 to-white">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -215,17 +215,17 @@ export default function HomePage() {
               >
                 <Link href="/contact">
                   <motion.button
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg transition-all flex items-center gap-2"
+                    className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all flex items-center gap-2"
                   >
                     Get Started <ArrowRight className="w-5 h-5" />
                   </motion.button>
                 </Link>
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 rounded-lg border border-border text-foreground font-semibold hover:bg-secondary transition-all"
+                  className="px-8 py-4 rounded-xl border border-border bg-white text-foreground font-semibold hover:bg-gray-50 hover:shadow-md transition-all"
                 >
                   Learn More
                 </motion.button>
@@ -367,16 +367,17 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  whileHover={{ y: -8 }}
+                  className="text-center p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary/20"
                 >
                   <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mx-auto mb-4"
+                    whileHover={{ scale: 1.15, rotate: 10 }}
+                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/15 to-accent/15 flex items-center justify-center mx-auto mb-6"
                   >
                     <Icon className="w-8 h-8 text-primary" />
                   </motion.div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                 </motion.div>
               )
             })}
@@ -411,8 +412,8 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all"
+                  whileHover={{ y: -8 }}
+                  className="bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl p-8 hover:bg-white/20 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
                 >
                   <motion.div
                     whileHover={{ scale: 1.2 }}
@@ -430,7 +431,7 @@ export default function HomePage() {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-900">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -456,16 +457,16 @@ export default function HomePage() {
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8 }}
-                  className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-2xl p-8 hover:shadow-lg transition-all"
+                  className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/30 rounded-2xl p-8 hover:bg-white/15 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
                 >
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 10 }}
-                    className="w-14 h-14 rounded-lg bg-primary/30 flex items-center justify-center mb-4"
+                    className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center mb-6"
                   >
-                    <Icon className="w-7 h-7 text-primary" />
+                    <Icon className="w-8 h-8 text-blue-300" />
                   </motion.div>
                   <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
-                  <p className="text-gray-300">{value.description}</p>
+                  <p className="text-blue-100/80 leading-relaxed">{value.description}</p>
                 </motion.div>
               )
             })}
@@ -474,7 +475,7 @@ export default function HomePage() {
       </section>
 
       {/* Journey/Timeline Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/30 to-primary/20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -483,8 +484,8 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">Our Journey of Growth</h2>
-            <p className="text-white/80">A look at our key milestones and achievements over the years.</p>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Our Journey of Growth</h2>
+            <p className="text-muted-foreground">A look at our key milestones and achievements over the years.</p>
           </motion.div>
 
           <div className="relative">
@@ -494,13 +495,13 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-12 text-center"
+              className="bg-gradient-to-br from-blue-50 to-white border border-gray-200 rounded-3xl p-12 text-center shadow-lg hover:shadow-xl transition-all"
             >
               <div className="mb-4">
-                <span className="text-5xl font-bold text-blue-300">{journeyMilestones[journeyIndex].year}</span>
+                <span className="text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{journeyMilestones[journeyIndex].year}</span>
               </div>
-              <h3 className="text-3xl font-bold text-white mb-3">{journeyMilestones[journeyIndex].title}</h3>
-              <p className="text-white/80 text-lg max-w-2xl mx-auto">{journeyMilestones[journeyIndex].description}</p>
+              <h3 className="text-3xl font-bold text-foreground mb-3">{journeyMilestones[journeyIndex].title}</h3>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{journeyMilestones[journeyIndex].description}</p>
             </motion.div>
 
             <div className="flex justify-center gap-4 mt-8">
@@ -508,7 +509,7 @@ export default function HomePage() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setJourneyIndex((prev) => (prev - 1 + journeyMilestones.length) % journeyMilestones.length)}
-                className="p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition-all"
+                className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 transition-all"
               >
                 <ChevronLeft className="w-6 h-6" />
               </motion.button>
@@ -516,7 +517,7 @@ export default function HomePage() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setJourneyIndex((prev) => (prev + 1) % journeyMilestones.length)}
-                className="p-3 rounded-full bg-white/20 hover:bg-white/30 text-white transition-all"
+                className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 transition-all"
               >
                 <ChevronRight className="w-6 h-6" />
               </motion.button>

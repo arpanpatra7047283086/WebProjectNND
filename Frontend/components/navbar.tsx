@@ -35,10 +35,10 @@ export function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
         scrolled
-          ? 'bg-white border-b border-gray-200 shadow-md'
-          : 'bg-white border-b border-gray-100 shadow-sm'
+          ? 'bg-white/95 border-b border-gray-200 shadow-lg'
+          : 'bg-white/80 border-b border-transparent shadow-none'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -92,7 +92,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <Link href="/contact">
               <motion.button
-                className="hidden sm:inline-flex px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-primary/25 transition-all"
+                className="hidden sm:inline-flex px-6 py-2.5 bg-primary text-primary-foreground rounded-xl font-semibold text-sm shadow-md shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
