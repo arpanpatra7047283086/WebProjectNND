@@ -151,16 +151,16 @@ export default function HomePage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center">
+      <section className="relative min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center bg-gradient-to-b from-blue-50 to-white">
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
             animate={{
               x: [0, 50, 0],
               y: [0, -50, 0],
             }}
             transition={{ duration: 15, repeat: Infinity }}
-            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl"
+            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/15 to-accent/15 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -168,7 +168,7 @@ export default function HomePage() {
               y: [0, 50, 0],
             }}
             transition={{ duration: 20, repeat: Infinity }}
-            className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-accent/20 to-primary/20 rounded-full blur-3xl"
+            className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-accent/15 to-primary/15 rounded-full blur-3xl"
           />
         </div>
 
@@ -342,7 +342,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-secondary/30 to-background">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -385,7 +385,7 @@ export default function HomePage() {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/30 to-primary/20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-900 to-blue-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -430,7 +430,7 @@ export default function HomePage() {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

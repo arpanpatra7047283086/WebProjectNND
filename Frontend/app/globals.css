@@ -47,18 +47,18 @@
 
 :root {
   color-scheme: light;
-  --background: #f8fbfe;
+  --background: #ffffff;
   --foreground: #0f172a;
-  --card: #ffffff;
+  --card: #f8fafc;
   --card-foreground: #0f172a;
   --popover: #ffffff;
   --popover-foreground: #0f172a;
   --primary: #0052cc;
   --primary-foreground: #ffffff;
-  --secondary: #dbeafe;
+  --secondary: #e0f2fe;
   --secondary-foreground: #0c4a6e;
-  --muted: #e2e8f0;
-  --muted-foreground: #475569;
+  --muted: #e8f4f8;
+  --muted-foreground: #64748b;
   --accent: #06b6d4;
   --accent-foreground: #082f49;
   --destructive: #dc2626;
