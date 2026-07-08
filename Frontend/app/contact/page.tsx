@@ -72,7 +72,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-xl text-muted-foreground"
           >
-            Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+            We're here to help and eager to hear from you. Send us a message with your questions, and we'll get back to you promptly.
           </motion.p>
         </div>
       </section>
@@ -300,20 +300,20 @@ export default function ContactPage() {
           <div className="space-y-4">
             {[
               {
-                q: 'How quickly will I receive a response?',
-                a: 'We aim to respond to all inquiries within 24 hours during business days.'
+                q: 'What is your typical response time?',
+                a: 'Our goal is to respond to all inquiries within 24 hours on business days. We appreciate your patience.'
               },
               {
                 q: 'What are the requirements to become an agent?',
-                a: 'You need a smartphone, valid KYC documents, and a Pan India presence to become an eSmartPay agent.'
+                a: 'To become an eSmartPay agent, you will need a smartphone and valid KYC documents. A presence across India is beneficial.'
               },
               {
                 q: 'Do you offer 24/7 customer support?',
-                a: 'Yes, our customer support team is available 24/7 to assist you with any queries.'
+                a: 'Absolutely. Our dedicated customer support team is available around the clock to assist you with any questions or concerns.'
               },
               {
                 q: 'What payment methods do you accept?',
-                a: 'We accept all major payment methods including cards, UPI, net banking, and wallets.'
+                a: 'We support a wide range of payment options, including all major credit/debit cards, UPI, net banking, and popular digital wallets.'
               },
             ].map((item, index) => (
               <motion.div

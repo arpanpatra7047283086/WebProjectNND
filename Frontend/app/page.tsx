@@ -11,25 +11,25 @@ const services = [
   {
     icon: Smartphone,
     title: 'Mobile Recharge',
-    description: 'Instant mobile and DTH recharges',
+    description: 'Top up your mobile and DTH services in seconds.',
     href: '/services'
   },
   {
     icon: CreditCard,
     title: 'Bill Payments',
-    description: 'Pay all bills in one place',
+    description: 'Effortlessly handle all your utility and bill payments.',
     href: '/services'
   },
   {
     icon: TrendingUp,
     title: 'Investments',
-    description: 'Smart investment options',
+    description: 'Discover intelligent ways to grow your wealth.',
     href: '/services'
   },
   {
     icon: Shield,
     title: 'Insurance',
-    description: 'Affordable insurance plans',
+    description: 'Protect what matters most with our accessible insurance plans.',
     href: '/services'
   },
 ]
@@ -61,22 +61,22 @@ const solutions = [
   {
     icon: Layers,
     title: 'All-in-one solution',
-    description: 'Our staff will assist you in smoothly completing the digital transformation process. Tell us your concept simply. From consultation through UI/UX, and from development to ongoing maintenance, we will proceed step-by-step together.'
+    description: 'Our team guides you through a seamless digital transformation. From initial concept and UI/UX design to development and ongoing support, we collaborate with you at every stage.'
   },
   {
     icon: Code2,
     title: 'Clean Code',
-    description: 'If everyone on the team can easily understand the code, it is clean. Clean code is readable and extendable by developers besides the original author. Readability, changeability, extensibility, and maintainability follow comprehension.'
+    description: 'We believe clean code is intuitive and easily understood by any developer. It is readable, scalable, and maintainable, ensuring long-term project health and collaboration.'
   },
   {
     icon: Phone,
     title: '24X7 Support',
-    description: 'Our customer service is best in class and committed to serve you 24x7 for your queries and questions.'
+    description: 'Our top-tier customer service team is dedicated to assisting you around the clock, ready to answer your questions and resolve any issues.'
   },
   {
     icon: ThumbsUp,
     title: 'Easy Integration',
-    description: 'Easy integration for your online and mobile applications lets you sign up and go.'
+    description: 'Our platform offers straightforward integration for your web and mobile applications, allowing for a quick and simple setup process.'
   },
 ]
 
@@ -84,22 +84,22 @@ const values = [
   {
     icon: Award,
     title: 'Integrity',
-    description: 'We support being honest in all of our dealings.'
+    description: 'We are committed to upholding the highest standards of honesty in all our interactions.'
   },
   {
     icon: Handshake,
     title: 'Trust',
-    description: 'The promises we made to you are kept.'
+    description: 'We build relationships by consistently delivering on the promises we make to you.'
   },
   {
     icon: Users,
     title: 'Customer First',
-    description: 'Customers are at the center of all we do.'
+    description: 'Our customers are the focal point of our strategy, inspiring everything we create.'
   },
   {
     icon: BarChart3,
     title: 'Transparency',
-    description: 'We take pride in being completely transparent about our opinions and decisions.'
+    description: 'We believe in open communication and take pride in being transparent in all our decisions.'
   },
 ]
 
@@ -118,11 +118,11 @@ const partners = [
 ]
 
 const journeyMilestones = [
-  { year: '2018', title: 'Founded', description: 'eSmartPay founded with a vision to revolutionize fintech in India.' },
-  { year: '2019', title: 'Expansion', description: 'Expanded services across major cities in India.' },
-  { year: '2021', title: 'Growth', description: 'PAN India operations began in April 2021. The Network or retailers now includes 25,000 Direct Business Outlets (Agent).' },
-  { year: '2023', title: 'Innovation', description: 'Launched innovative financial products and solutions.' },
-  { year: '2024', title: 'Leading Platform', description: 'Became the leading fintech platform with 500K+ users.' },
+  { year: '2018', title: 'Our Inception', description: 'eSmartPay was founded with a bold vision to redefine the future of finance in India.' },
+  { year: '2019', title: 'Strategic Expansion', description: 'We extended our services, establishing a strong presence in major cities across India.' },
+  { year: '2021', title: 'Nationwide Growth', description: 'Achieved PAN India operations, growing our network to over 25,000 Direct Business Outlets.' },
+  { year: '2023', title: 'Driving Innovation', description: 'Introduced a new wave of pioneering financial products and cutting-edge solutions.' },
+  { year: '2024', title: 'Market Leadership', description: 'Emerged as a leading fintech platform, trusted by a community of over 500,000 users.' },
 ]
 
 export default function HomePage() {
@@ -186,7 +186,7 @@ export default function HomePage() {
                 transition={{ delay: 0.2 }}
                 className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
               >
-                <span className="text-sm font-semibold text-primary">Revolutionizing Fintech in India</span>
+                <span className="text-sm font-semibold text-primary">Transforming India's Financial Landscape</span>
               </motion.div>
 
               <motion.h1
@@ -195,7 +195,7 @@ export default function HomePage() {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-5xl sm:text-6xl font-bold leading-tight mb-6"
               >
-                Your Complete Financial <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Platform</span>
+                Your All-in-One Financial <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Hub</span>
               </motion.h1>
 
               <motion.p
@@ -204,7 +204,7 @@ export default function HomePage() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl text-muted-foreground mb-8 leading-relaxed"
               >
-                Access recharges, bill payments, investments, insurance, and banking services all in one secure platform.
+                Seamlessly manage recharges, bill payments, investments, insurance, and banking from a single, secure platform.
               </motion.p>
 
               <motion.div
@@ -239,9 +239,9 @@ export default function HomePage() {
                 className="mt-12 flex gap-8"
               >
                 {[
-                  { number: '500K+', label: 'Users' },
-                  { number: '25K+', label: 'Outlets' },
-                  { number: '21M+', label: 'Services' },
+                  { number: '500K+', label: 'Happy Users' },
+                  { number: '25K+', label: 'Partner Outlets' },
+                  { number: '21M+', label: 'Services Delivered' },
                 ].map((stat, i) => (
                   <div key={i}>
                     <h3 className="text-3xl font-bold text-primary">{stat.number}</h3>
@@ -301,9 +301,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">Our Services</h2>
+            <h2 className="text-4xl font-bold mb-4">Explore Our Services</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need for financial management in one platform
+              A comprehensive suite of financial tools designed for your convenience.
             </p>
           </motion.div>
 
@@ -353,7 +353,7 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold mb-4">Why Choose eSmartPay?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Trusted by thousands of users across India
+              Discover the advantages that make us a trusted choice for thousands across India.
             </p>
           </motion.div>
 
@@ -394,10 +394,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <p className="text-sm font-semibold text-blue-100 mb-2">Together, let's grow your business</p>
-            <h2 className="text-4xl font-bold text-white mb-4">First class business solutions</h2>
+            <p className="text-sm font-semibold text-blue-100 mb-2">Partner with Us for Growth</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Premier Business Solutions</h2>
             <p className="text-white/80 max-w-2xl mx-auto">
-              The primary objective of the business is to serve the demands and wants of our customers. For the benefit of our consumers, we offer a variety of services.
+              Our core mission is to meet the unique needs of our customers by offering a diverse range of beneficial services.
             </p>
           </motion.div>
 
@@ -441,7 +441,7 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold mb-4">Our Values</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Core principles that drive everything we do
+              The fundamental principles that guide our actions and define our character.
             </p>
           </motion.div>
 
@@ -483,8 +483,8 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">Journey</h2>
-            <p className="text-white/80">Our milestones and achievements</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Our Journey of Growth</h2>
+            <p className="text-white/80">A look at our key milestones and achievements over the years.</p>
           </motion.div>
 
           <div className="relative">
@@ -548,8 +548,8 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-2">To get started, provide us with your details</h2>
-            <p className="text-muted-foreground">Join thousands of users and start your journey with us</p>
+            <h2 className="text-4xl font-bold mb-2">Begin Your Journey With Us</h2>
+            <p className="text-muted-foreground">Provide your details below to join thousands of satisfied users.</p>
           </motion.div>
 
           <motion.form
@@ -717,7 +717,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-lg text-muted-foreground mb-8"
           >
-            Join thousands of users who have simplified their financial life with eSmartPay
+            Join thousands of users who are simplifying their financial lives with eSmartPay.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}

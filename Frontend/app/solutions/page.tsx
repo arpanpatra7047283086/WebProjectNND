@@ -9,25 +9,25 @@ const solutions = [
   {
     icon: Code2,
     title: 'All-in-One Solution',
-    description: 'Our staff will assist you in smoothly completing the digital transformation. From consultation through UI/UX, development to ongoing maintenance, we proceed step-by-step together.',
+    description: 'Our team guides you through a seamless digital transformation. From initial concept and UI/UX design to development and ongoing support, we collaborate with you at every stage.',
     benefits: ['Consultation', 'UI/UX Design', 'Development', 'Maintenance']
   },
   {
     icon: Zap,
     title: 'Clean Code',
-    description: 'If everyone on the team can easily understand the code, it is clean. Clean code is readable and extendable by developers besides the original author.',
+    description: 'We believe clean code is intuitive and easily understood by any developer. It is readable, scalable, and maintainable, ensuring long-term project health.',
     benefits: ['Readability', 'Extensibility', 'Maintainability', 'Quality']
   },
   {
     icon: Clock,
     title: '24x7 Support',
-    description: 'Our customer service is best in class and committed to serve you 24x7 for your queries and questions. We are always here to help.',
+    description: 'Our top-tier customer service team is dedicated to assisting you around the clock, ready to answer your questions and resolve any issues whenever you need us.',
     benefits: ['Round-the-clock Support', 'Quick Response', 'Expert Team', 'Reliable Service']
   },
   {
     icon: Smartphone,
     title: 'Easy Integration',
-    description: 'Easy integration for your online and mobile applications lets you sign up and go. No complex setup required.',
+    description: 'Our platform offers straightforward integration for your web and mobile applications, allowing for a quick and simple setup process with no complex configurations.',
     benefits: ['API Integration', 'Mobile Ready', 'Fast Setup', 'Scalable']
   },
 ]
@@ -35,19 +35,19 @@ const solutions = [
 const agentProgram = [
   {
     title: 'Profitable MPOS Solution',
-    description: 'Earn competitive commissions on every transaction with our advanced MPOS technology'
+    description: 'Maximize your earnings with competitive commissions on every transaction through our state-of-the-art MPOS technology.'
   },
   {
     title: 'MATM & AEPS Services',
-    description: 'Offer cash withdrawal and Aadhaar-enabled payment services to expand your business'
+    description: 'Broaden your service offerings and attract more customers by providing cash withdrawal and Aadhaar-enabled payments.'
   },
   {
     title: 'Insurance Plans',
-    description: 'Provide affordable insurance solutions to your customers and earn recurring income'
+    description: 'Generate a steady stream of income by offering valuable and affordable insurance solutions to your customer base.'
   },
   {
     title: 'Business Growth Support',
-    description: 'Get marketing materials, training, and dedicated support to grow your agent network'
+    description: 'Accelerate your growth with our comprehensive support, including marketing materials, professional training, and dedicated assistance.'
   },
 ]
 
@@ -93,7 +93,7 @@ export default function SolutionsPage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-xl text-muted-foreground"
           >
-            Gain Business Growth With eSmartPay Payment Banking Services
+            Unlock Your Business Potential with eSmartPay's Advanced Payment and Banking Services.
           </motion.p>
         </div>
       </section>
@@ -148,8 +148,8 @@ export default function SolutionsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Become an eSmartPay Agent</h2>
-            <p className="text-lg text-muted-foreground">
-              Join our growing network and earn profitable income
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Join our expanding network of successful agents and unlock a new stream of profitable income.
             </p>
           </motion.div>
 
