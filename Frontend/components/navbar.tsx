@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +14,7 @@ export function Navbar() {
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/services' },
     { label: 'About', href: '/about' },
-    { label: 'Solutions', href: '/solutions' },
+    { label: 'Careers', href: '/careers' },
     { label: 'Contact', href: '/contact' },
   ]
 
@@ -21,8 +22,8 @@ export function Navbar() {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-gradient-to-r from-slate-900 to-slate-800 border-b border-primary/30 shadow-lg'
-          : 'bg-gradient-to-r from-slate-900 to-slate-800 border-b border-primary/20 shadow-md'
+          ? 'bg-white border-b border-border shadow-lg'
+          : 'bg-white border-b border-border/50 shadow-sm'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -37,13 +38,13 @@ export function Navbar() {
             className="flex items-center gap-2"
           >
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">$</span>
-              </div>
-              <div className="hidden sm:flex flex-col">
-                <span className="text-lg font-bold text-white">eSmartPay</span>
-                <span className="text-xs text-blue-200">Financial Platform</span>
-              </div>
+              <Image 
+                src="/logo.png" 
+                alt="SmartPay Logo" 
+                width={120} 
+                height={40}
+                className="h-10 w-auto"
+              />
             </Link>
           </motion.div>
 
@@ -58,11 +59,11 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="px-4 py-2 text-white font-medium text-sm relative group hover:text-blue-200 transition-colors"
+                  className="px-4 py-2 text-foreground font-medium text-sm relative group hover:text-primary transition-colors"
                 >
                   <span className="relative z-10">{item.label}</span>
                   <motion.span
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
@@ -77,7 +78,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <Link href="/contact">
               <motion.button
-                className="hidden sm:inline-flex px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-primary/25 transition-all"
+                className="hidden sm:inline-flex px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold text-sm hover:shadow-lg transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -103,7 +104,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <motion.div
-          className="lg:hidden overflow-hidden bg-slate-800/90 backdrop-blur-md border-t border-primary/30"
+          className="lg:hidden overflow-hidden bg-white border-t border-border"
           initial={{ height: 0 }}
           animate={{ height: isOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
@@ -118,7 +119,7 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="block px-4 py-3 text-white font-medium text-sm hover:bg-slate-700/50 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-foreground font-medium text-sm hover:bg-secondary rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -127,7 +128,7 @@ export function Navbar() {
             ))}
             <Link href="/contact">
               <motion.button
-                className="w-full mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm"
+                className="w-full mt-2 px-4 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold text-sm"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsOpen(false)}

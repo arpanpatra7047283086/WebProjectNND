@@ -3,38 +3,43 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
-import { Smartphone, CreditCard, TrendingUp, Shield, Zap, BarChart3 } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const services = [
   {
-    icon: Smartphone,
+    icon: 'rinovapay.com/assets/img/services/recharges.png',
     title: 'Mobile Recharge',
-    description: 'Instant mobile and DTH recharges with zero hassle. Pay bills for any service provider across India.'
+    description: 'Instant mobile and DTH recharges with zero hassle. Pay bills for any service provider across India.',
+    href: '/mobile-recharge'
   },
   {
-    icon: CreditCard,
+    icon: 'rinovapay.com/assets/img/services/utility.png',
     title: 'Bill Payments',
-    description: 'Pay all your bills - electricity, water, gas, internet - in one place with instant confirmation.'
+    description: 'Pay all your bills - electricity, water, gas, internet - in one place with instant confirmation.',
+    href: '/bill-payments'
   },
   {
-    icon: TrendingUp,
+    icon: 'rinovapay.com/assets/img/services/aeps.png',
     title: 'Investments',
-    description: 'Invest in FDs, stocks, mutual funds with algorithmic advice and personalized recommendations.'
+    description: 'Invest in FDs, stocks, mutual funds with algorithmic advice and personalized recommendations.',
+    href: '/investments'
   },
   {
-    icon: Shield,
+    icon: 'rinovapay.com/assets/img/services/matm.png',
     title: 'Insurance',
-    description: 'Get best insurance rates for health, car, travel and more with instant digital contracts.'
+    description: 'Get best insurance rates for health, car, travel and more with instant digital contracts.',
+    href: '/insurance'
   },
   {
-    icon: Zap,
-    title: 'Mini ATM',
-    description: 'Cash management and withdrawal services available 24/7 at your convenience.'
+    icon: 'rinovapay.com/assets/img/services/collection.png',
+    title: 'Collections',
+    description: 'Secure collection of payments with real-time settlement and detailed reporting.'
   },
   {
-    icon: BarChart3,
-    title: 'AEPS Services',
-    description: 'Aadhaar-enabled payments for seamless transactions and agent network expansion.'
+    icon: 'rinovapay.com/assets/img/services/pancard.png',
+    title: 'PAN Services',
+    description: 'PAN card application and verification services with instant digital processing.'
   },
 ]
 
@@ -63,7 +68,6 @@ export default function ServicesPage() {
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
-              const Icon = service.icon
               return (
                 <motion.div
                   key={index}
@@ -73,16 +77,45 @@ export default function ServicesPage() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="bg-card border border-border rounded-xl p-8 h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-4"
-                    >
-                      <Icon className="w-7 h-7 text-primary" />
-                    </motion.div>
-                    <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                  </div>
+                  {service.href ? (
+                    <Link href={service.href}>
+                      <div className="bg-card border border-border rounded-xl p-8 h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                        <motion.div
+                          whileHover={{ scale: 1.1 }}
+                          className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-4 relative"
+                        >
+                          <Image
+                            src={`https://${service.icon}`}
+                            alt={service.title}
+                            width={40}
+                            height={40}
+                            className="w-10 h-10 object-contain"
+                            onError={() => console.log(`Failed to load: ${service.icon}`)}
+                          />
+                        </motion.div>
+                        <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="bg-card border border-border rounded-xl p-8 h-full hover:shadow-lg transition-all duration-300">
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-4"
+                      >
+                        <Image
+                          src={`https://${service.icon}`}
+                          alt={service.title}
+                          width={40}
+                          height={40}
+                          className="w-10 h-10 object-contain"
+                          onError={() => console.log(`Failed to load: ${service.icon}`)}
+                        />
+                      </motion.div>
+                      <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                    </div>
+                  )}
                 </motion.div>
               )
             })}

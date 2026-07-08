@@ -36,39 +36,39 @@ export function Footer() {
     {
       title: 'Services',
       links: [
-        { label: 'Mobile Recharge', href: '/services' },
-        { label: 'Bill Payments', href: '/services' },
-        { label: 'Investments', href: '/services' },
-        { label: 'Insurance', href: '/services' },
+        { label: 'Mobile Recharge', href: '/mobile-recharge' },
+        { label: 'Bill Payments', href: '/bill-payments' },
+        { label: 'Investments', href: '/investments' },
+        { label: 'Insurance', href: '/insurance' },
       ],
     },
     {
       title: 'Company',
       links: [
         { label: 'About Us', href: '/about' },
-        { label: 'Become an Agent', href: '/solutions' },
+        { label: 'Become an Agent', href: '/become-agent' },
         { label: 'Contact Us', href: '/contact' },
-        { label: 'Careers', href: '#' },
+        { label: 'Careers', href: '/careers' },
       ],
     },
     {
       title: 'Legal',
       links: [
-        { label: 'Privacy Policy', href: '#' },
+        { label: 'Privacy Policy', href: '/privacy-policy' },
         { label: 'Terms & Conditions', href: '/terms-and-conditions' },
-        { label: 'Refund Policy', href: '#' },
-        { label: 'Security', href: '#' },
+        { label: 'Refund Policy', href: '/refund-policy' },
+        { label: 'Security', href: '/security' },
       ],
     },
   ]
 
   return (
-    <footer className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+    <footer className="bg-white border-t border-border">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Newsletter Section */}
         <motion.div
-          className="bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/40 rounded-2xl p-8 md:p-12 mb-16"
+          className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 md:p-12 mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -76,19 +76,19 @@ export function Footer() {
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-3xl font-bold mb-2 text-white">Stay Updated</h3>
-              <p className="text-blue-100">Get the latest fintech updates and offers directly to your inbox.</p>
+              <h3 className="text-3xl font-bold mb-2 text-foreground">Stay Updated</h3>
+              <p className="text-muted-foreground">Get the latest fintech updates and offers directly to your inbox.</p>
             </div>
             <div className="flex gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-white border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex-1 px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
@@ -106,16 +106,11 @@ export function Footer() {
         >
           {/* Brand Section */}
           <motion.div variants={itemVariants}>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">$</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">eSmartPay</h3>
-                <p className="text-xs text-blue-200">Financial Platform</p>
-              </div>
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-foreground">SmartPay</h3>
+              <p className="text-xs text-muted-foreground">Financial Platform</p>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Your trusted partner for all financial services. Making fintech accessible to everyone in India.
             </p>
             {/* Social Links */}
@@ -141,7 +136,7 @@ export function Footer() {
           {/* Links Sections */}
           {footerSections.map((section, idx) => (
             <motion.div key={idx} variants={itemVariants}>
-              <h4 className="text-lg font-bold text-white mb-4">{section.title}</h4>
+              <h4 className="text-lg font-bold text-foreground mb-4">{section.title}</h4>
               <ul className="space-y-3">
                 {section.links.map((link, i) => (
                   <motion.li
@@ -151,7 +146,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-blue-300 text-sm font-medium transition-colors flex items-center gap-1"
+                      className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors flex items-center gap-1"
                     >
                       {link.label}
                     </Link>
@@ -163,33 +158,33 @@ export function Footer() {
 
           {/* Contact Section */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold text-white mb-4">Contact</h4>
+            <h4 className="text-lg font-bold text-foreground mb-4">Contact</h4>
             <div className="space-y-4">
               <a
-                href="mailto:support@esmartpay.com"
-                className="flex items-start gap-3 text-gray-300 hover:text-blue-300 transition-colors group"
+                href="mailto:support@smartpay.com"
+                className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group"
               >
-                <Mail className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-white">Email</p>
-                  <p className="text-xs text-gray-400">support@esmartpay.com</p>
+                  <p className="text-sm font-medium text-foreground">Email</p>
+                  <p className="text-xs text-muted-foreground">support@smartpay.com</p>
                 </div>
               </a>
               <a
                 href="tel:+919876543210"
-                className="flex items-start gap-3 text-gray-300 hover:text-blue-300 transition-colors group"
+                className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group"
               >
-                <Phone className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-white">Phone</p>
-                  <p className="text-xs text-gray-400">+91 98765 43210</p>
+                  <p className="text-sm font-medium text-foreground">Phone</p>
+                  <p className="text-xs text-muted-foreground">+91 98765 43210</p>
                 </div>
               </a>
-              <div className="flex items-start gap-3 text-gray-300">
-                <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+              <div className="flex items-start gap-3 text-muted-foreground">
+                <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-white">Address</p>
-                  <p className="text-xs text-gray-400">New Delhi, India</p>
+                  <p className="text-sm font-medium text-foreground">Address</p>
+                  <p className="text-xs text-muted-foreground">New Delhi, India</p>
                 </div>
               </div>
             </div>
@@ -198,7 +193,7 @@ export function Footer() {
 
         {/* Divider */}
         <motion.div
-          className="border-t border-slate-700 my-8"
+          className="border-t border-border my-8"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8 }}
@@ -207,23 +202,23 @@ export function Footer() {
 
         {/* Bottom Footer */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300"
+          className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
           <p>
-            © 2024 eSmartPay. All Rights Reserved. | ISHMART TECHNOGLOBAL SERVICES PRIVATE LIMITED
+            © 2024 SmartPay. All Rights Reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-blue-300 transition-colors font-medium">
+            <a href="#" className="hover:text-primary transition-colors font-medium">
               Sitemap
             </a>
-            <a href="#" className="hover:text-blue-300 transition-colors font-medium">
+            <a href="#" className="hover:text-primary transition-colors font-medium">
               Accessibility
             </a>
-            <a href="#" className="hover:text-blue-300 transition-colors font-medium">
+            <a href="#" className="hover:text-primary transition-colors font-medium">
               Cookie Policy
             </a>
           </div>
@@ -231,7 +226,7 @@ export function Footer() {
       </div>
 
       {/* Top Footer Accent */}
-      <div className="h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600" />
+      <div className="h-1 bg-gradient-to-r from-primary via-accent to-primary" />
     </footer>
   )
 }
