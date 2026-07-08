@@ -55,7 +55,7 @@ export function Footer() {
       title: 'Legal',
       links: [
         { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms & Conditions', href: '#' },
+        { label: 'Terms & Conditions', href: '/terms-and-conditions' },
         { label: 'Refund Policy', href: '#' },
         { label: 'Security', href: '#' },
       ],
