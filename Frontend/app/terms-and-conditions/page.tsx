@@ -20,17 +20,17 @@ const partners = [
   { name: 'Book Nearby', src: '/partners/cp12.jpeg' },
 ]
 
-  const sections = [
-    { id: 'definitions', label: 'Definitions', icon: BookOpen },
-    { id: 'scope', label: 'Scope of Services', icon: Target },
-    { id: 'ip', label: 'Intellectual Property', icon: ShieldCheck },
-    { id: 'payment', label: 'Payment Mechanism', icon: Scale },
-    { id: 'settlement', label: 'Settlement', icon: History },
-    { id: 'obligations', label: 'Obligations', icon: Terminal },
-    { id: 'liability', label: 'Liability & Indemnity', icon: AlertCircle },
-    { id: 'fraud', label: 'Fraud & Anti-Bribery', icon: ShieldAlert },
-    { id: 'termination', label: 'Termination', icon: Gavel },
-  ];
+const sections = [
+  { id: 'definitions', label: 'Definitions', icon: BookOpen },
+  { id: 'scope', label: 'Scope of Services', icon: Target },
+  { id: 'ip', label: 'Intellectual Property', icon: ShieldCheck },
+  { id: 'payment', label: 'Payment Mechanism', icon: Scale },
+  { id: 'settlement', label: 'Settlement', icon: History },
+  { id: 'obligations', label: 'Obligations', icon: Terminal },
+  { id: 'liability', label: 'Liability & Indemnity', icon: AlertCircle },
+  { id: 'fraud', label: 'Fraud & Anti-Bribery', icon: ShieldAlert },
+  { id: 'termination', label: 'Termination', icon: Gavel },
+];
 
 export default function TermsAndConditions() {
   const scrollToSection = (id: string) => {
@@ -380,16 +380,15 @@ export default function TermsAndConditions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className="group flex items-center justify-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-32"
+                  className="group relative flex items-center justify-center p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-32"
                 >
-                    <Image
-                      src={partner.src}
-                      alt={partner.name}
-                      width={120}
-                      height={48}
-                      style={{ width: '100%', height: 'auto' }}
-                      className="max-h-12 object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                    />
+                  <Image
+                    src={partner.src}
+                    alt={partner.name}
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
+                    className="object-contain p-4 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                  />
                 </motion.div>
               ))}
             </div>
