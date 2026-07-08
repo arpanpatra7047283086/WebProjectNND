@@ -12,25 +12,25 @@ const services = [
     icon: Smartphone,
     title: 'Mobile Recharge',
     description: 'Top up your mobile and DTH services in seconds.',
-    href: '/services'
+    href: '/services#mobile-recharge'
   },
   {
     icon: CreditCard,
     title: 'Bill Payments',
     description: 'Effortlessly handle all your utility and bill payments.',
-    href: '/services'
+    href: '/services#bill-payments'
   },
   {
     icon: TrendingUp,
     title: 'Investments',
     description: 'Discover intelligent ways to grow your wealth.',
-    href: '/services'
+    href: '/services#investments'
   },
   {
     icon: Shield,
     title: 'Insurance',
     description: 'Protect what matters most with our accessible insurance plans.',
-    href: '/services'
+    href: '/services#insurance'
   },
 ]
 
@@ -198,14 +198,30 @@ export default function HomePage() {
                 <span className="text-sm font-bold text-cyan-300">⚡ Transforming India's Financial Landscape</span>
               </motion.div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-5xl sm:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 bg-clip-text text-transparent"
-              >
-                Your All-in-One Financial Hub
-              </motion.h1>
+              <div className="text-5xl sm:text-6xl font-bold leading-tight mb-6 h-20 sm:h-24">
+                <motion.h1
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 bg-clip-text text-transparent"
+                >
+                  {['Y', 'o', 'u', 'r', ' ', 'A', 'l', 'l', '-', 'i', 'n', '-', 'O', 'n', 'e', ' ', 'F', 'i', 'n', 'a', 'n', 'c', 'i', 'a', 'l', ' ', 'H', 'u', 'b'].map((char, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: 0.4 + (i * 0.03),
+                        duration: 0.5,
+                        ease: 'easeOut'
+                      }}
+                      className="inline-block"
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.h1>
+              </div>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
