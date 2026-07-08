@@ -63,7 +63,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-white border-t border-border">
+    <footer className="bg-gradient-to-br from-primary/95 via-primary/90 to-accent/90 border-t border-accent/30">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Newsletter Section */}
@@ -76,19 +76,19 @@ export function Footer() {
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-3xl font-bold mb-2 text-foreground">Stay Updated</h3>
-              <p className="text-muted-foreground">Get the latest fintech updates and offers directly to your inbox.</p>
+              <h3 className="text-3xl font-bold mb-2 text-white">Stay Updated</h3>
+              <p className="text-white/80">Get the latest fintech updates and offers directly to your inbox.</p>
             </div>
             <div className="flex gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex-1 px-4 py-3 bg-white/95 border border-white/20 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-white"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:shadow-lg transition-all"
               >
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
@@ -107,10 +107,10 @@ export function Footer() {
           {/* Brand Section */}
           <motion.div variants={itemVariants}>
             <div className="mb-4">
-              <h3 className="text-xl font-bold text-foreground">SmartPay</h3>
-              <p className="text-xs text-muted-foreground">Financial Platform</p>
+              <h3 className="text-xl font-bold text-white">SmartPay</h3>
+              <p className="text-xs text-white/70">Financial Platform</p>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            <p className="text-white/80 text-sm leading-relaxed mb-6">
               Your trusted partner for all financial services. Making fintech accessible to everyone in India.
             </p>
             {/* Social Links */}
@@ -124,7 +124,7 @@ export function Footer() {
                     title={social.label}
                     whileHover={{ scale: 1.15, y: -3 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-white transition-all"
+                    className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all"
                   >
                     <Icon className="w-5 h-5" />
                   </motion.a>
@@ -136,7 +136,7 @@ export function Footer() {
           {/* Links Sections */}
           {footerSections.map((section, idx) => (
             <motion.div key={idx} variants={itemVariants}>
-              <h4 className="text-lg font-bold text-foreground mb-4">{section.title}</h4>
+              <h4 className="text-lg font-bold text-white mb-4">{section.title}</h4>
               <ul className="space-y-3">
                 {section.links.map((link, i) => (
                   <motion.li
@@ -146,7 +146,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors flex items-center gap-1"
+                      className="text-white/80 hover:text-white text-sm font-medium transition-colors flex items-center gap-1"
                     >
                       {link.label}
                     </Link>
@@ -158,33 +158,33 @@ export function Footer() {
 
           {/* Contact Section */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold text-foreground mb-4">Contact</h4>
+            <h4 className="text-lg font-bold text-white mb-4">Contact</h4>
             <div className="space-y-4">
               <a
                 href="mailto:support@smartpay.com"
-                className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group"
+                className="flex items-start gap-3 text-white/80 hover:text-white transition-colors group"
               >
-                <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-white/60 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-foreground">Email</p>
-                  <p className="text-xs text-muted-foreground">support@smartpay.com</p>
+                  <p className="text-sm font-medium text-white">Email</p>
+                  <p className="text-xs text-white/70">support@smartpay.com</p>
                 </div>
               </a>
               <a
                 href="tel:+919876543210"
-                className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group"
+                className="flex items-start gap-3 text-white/80 hover:text-white transition-colors group"
               >
-                <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-white/60 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-foreground">Phone</p>
-                  <p className="text-xs text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-sm font-medium text-white">Phone</p>
+                  <p className="text-xs text-white/70">+91 98765 43210</p>
                 </div>
               </a>
-              <div className="flex items-start gap-3 text-muted-foreground">
-                <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+              <div className="flex items-start gap-3 text-white/80">
+                <MapPin className="w-5 h-5 text-white/60 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-foreground">Address</p>
-                  <p className="text-xs text-muted-foreground">New Delhi, India</p>
+                  <p className="text-sm font-medium text-white">Address</p>
+                  <p className="text-xs text-white/70">New Delhi, India</p>
                 </div>
               </div>
             </div>
@@ -193,7 +193,7 @@ export function Footer() {
 
         {/* Divider */}
         <motion.div
-          className="border-t border-border my-8"
+          className="border-t border-white/20 my-8"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8 }}
@@ -202,7 +202,7 @@ export function Footer() {
 
         {/* Bottom Footer */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground"
+          className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
@@ -212,21 +212,18 @@ export function Footer() {
             © 2024 SmartPay. All Rights Reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary transition-colors font-medium">
+            <a href="#" className="hover:text-white transition-colors font-medium">
               Sitemap
             </a>
-            <a href="#" className="hover:text-primary transition-colors font-medium">
+            <a href="#" className="hover:text-white transition-colors font-medium">
               Accessibility
             </a>
-            <a href="#" className="hover:text-primary transition-colors font-medium">
+            <a href="#" className="hover:text-white transition-colors font-medium">
               Cookie Policy
             </a>
           </div>
         </motion.div>
       </div>
-
-      {/* Top Footer Accent */}
-      <div className="h-1 bg-gradient-to-r from-primary via-accent to-primary" />
     </footer>
   )
 }

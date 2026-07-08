@@ -22,8 +22,8 @@ export function Navbar() {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white border-b border-border shadow-lg'
-          : 'bg-white border-b border-border/50 shadow-sm'
+          ? 'bg-gradient-to-r from-white via-secondary/30 to-white border-b border-border shadow-xl'
+          : 'bg-gradient-to-r from-white via-secondary/20 to-white border-b border-border/40 shadow-md'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -102,9 +102,22 @@ export function Navbar() {
           </div>
         </div>
 
+        {/* Navbar Bottom Accent */}
+        {scrolled && (
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.5 }}
+            style={{ originX: 0 }}
+          />
+        )}
+
         {/* Mobile Navigation */}
         <motion.div
-          className="lg:hidden overflow-hidden bg-white border-t border-border"
+          className={`lg:hidden overflow-hidden bg-gradient-to-b from-white via-secondary/40 to-secondary/20 border-t border-border/50 transition-all ${
+            isOpen ? 'block' : 'hidden'
+          }`}
           initial={{ height: 0 }}
           animate={{ height: isOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
@@ -119,7 +132,7 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="block px-4 py-3 text-foreground font-medium text-sm hover:bg-secondary rounded-lg transition-colors"
+                  className="block px-4 py-3 text-foreground font-medium text-sm hover:bg-primary/10 hover:text-primary rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
