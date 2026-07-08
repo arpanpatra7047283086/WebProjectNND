@@ -1,9 +1,9 @@
 'use client'
 
-import { Navbar } from '@/components/navbar'
+import { Navbar } from '@/components/navbar' 
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
-import { Code2, Clock, Zap, Shield, Users, Smartphone } from 'lucide-react'
+import { Code2, Clock, Zap, Shield, Users, Smartphone, HeartHandshake, Lock, BarChart } from 'lucide-react'
 
 const solutions = [
   {
@@ -50,6 +50,26 @@ const agentProgram = [
     description: 'Get marketing materials, training, and dedicated support to grow your agent network'
   },
 ]
+
+const whyChooseUsFeatures = [
+  {
+    icon: HeartHandshake,
+    text: 'Outstanding Customer Service - Great customer support available whenever you need it'
+  },
+  {
+    icon: Lock,
+    text: 'Safety First - Safe and secure banking experience with industry-leading encryption'
+  },
+  {
+    icon: BarChart,
+    text: 'Seamless Integration - One platform for all your financial and banking needs'
+  },
+  {
+    icon: Shield,
+    text: 'Transparent Pricing - No small print, no additional fees, just honest pricing'
+  }
+];
+
 
 export default function SolutionsPage() {
   return (
@@ -179,24 +199,20 @@ export default function SolutionsPage() {
             Why Choose eSmartPay?
           </motion.h2>
           <div className="space-y-6">
-            {[
-              'Outstanding Customer Service - Great customer support available whenever you need it',
-              'Safety First - Safe and secure banking experience with industry-leading encryption',
-              'Seamless Integration - One platform for all your financial and banking needs',
-              'Transparent Pricing - No small print, no additional fees, just honest pricing'
-            ].map((feature, index) => (
+            {whyChooseUsFeatures.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="flex gap-4 items-start bg-card border border-border rounded-lg p-6"
-              >
-                <Shield className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                <p className="text-foreground">{feature}</p>
+                className="flex gap-4 items-start bg-card border border-border rounded-lg p-6">
+                <Icon className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <p className="text-foreground">{feature.text}</p>
               </motion.div>
-            ))}
+            )})}
           </div>
         </div>
       </section>

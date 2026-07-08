@@ -3,34 +3,29 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Send } from 'lucide-react'
-import { useState } from 'react'
+import { Phone, Mail, MapPin, Send, AlertCircle } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
+
+type FormValues = {
+  name: string;
+  email: string;
+  phone: string;
+  city: string;
+  option: string;
+  address: string;
+  message: string;
+};
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    city: '',
-    option: '',
-    address: '',
-    message: ''
-  })
-
   const [submitted, setSubmitted] = useState(false)
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data); // In a real app, you'd send this data to a server
     setSubmitted(true)
     setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', city: '', option: '', address: '', message: '' })
+      reset();
       setSubmitted(false)
     }, 3000)
   }
@@ -131,7 +126,7 @@ export default function ContactPage() {
                 <p className="text-muted-foreground">We&apos;ve received your message and will get back to you soon.</p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <motion.div
                     initial={{ opacity: 0, x: -10 }}
@@ -142,13 +137,15 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium mb-2">Name</label>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                      {...register("name", { required: "Name is required" })}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all ${errors.name ? 'border-red-500' : 'border-border'}`}
                       placeholder="Your name"
                     />
+                    {errors.name && 
+                      <span className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle size={14} /> {errors.name.message}
+                      </span>
+                    }
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, x: 10 }}
@@ -159,13 +156,18 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium mb-2">Email</label>
                     <input
                       type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                      {...register("email", { 
+                        required: "Email is required",
+                        pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" } 
+                      })}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all ${errors.email ? 'border-red-500' : 'border-border'}`}
                       placeholder="your@email.com"
                     />
+                    {errors.email && 
+                      <span className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle size={14} /> {errors.email.message}
+                      </span>
+                    }
                   </motion.div>
                 </div>
 
@@ -179,13 +181,15 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium mb-2">Phone Number</label>
                     <input
                       type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                      {...register("phone", { required: "Phone number is required" })}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all ${errors.phone ? 'border-red-500' : 'border-border'}`}
                       placeholder="+91 XXXXXXXXXX"
                     />
+                    {errors.phone && 
+                      <span className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle size={14} /> {errors.phone.message}
+                      </span>
+                    }
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, x: 10 }}
@@ -196,13 +200,15 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium mb-2">City</label>
                     <input
                       type="text"
-                      name="city"
-                      value={formData.city}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                      {...register("city", { required: "City is required" })}
+                      className={`w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all ${errors.city ? 'border-red-500' : 'border-border'}`}
                       placeholder="Your city"
                     />
+                    {errors.city && 
+                      <span className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle size={14} /> {errors.city.message}
+                      </span>
+                    }
                   </motion.div>
                 </div>
 
@@ -214,11 +220,8 @@ export default function ContactPage() {
                 >
                   <label className="block text-sm font-medium mb-2">What brings you here?</label>
                   <select
-                    name="option"
-                    value={formData.option}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    {...register("option", { required: "Please select an option" })}
+                    className={`w-full px-4 py-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all ${errors.option ? 'border-red-500' : 'border-border'}`}
                   >
                     <option value="">Please choose an option</option>
                     <option value="existing">Existing Agent</option>
@@ -226,6 +229,11 @@ export default function ContactPage() {
                     <option value="partnership">Partnership Inquiry</option>
                     <option value="support">Customer Support</option>
                   </select>
+                  {errors.option && 
+                    <span className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle size={14} /> {errors.option.message}
+                    </span>
+                  }
                 </motion.div>
 
                 <motion.div
@@ -237,10 +245,8 @@ export default function ContactPage() {
                   <label className="block text-sm font-medium mb-2">Address</label>
                   <input
                     type="text"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    {...register("address")}
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all" 
                     placeholder="Your address"
                   />
                 </motion.div>
@@ -253,11 +259,9 @@ export default function ContactPage() {
                 >
                   <label className="block text-sm font-medium mb-2">Message</label>
                   <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
+                    {...register("message")}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none" 
                     placeholder="Tell us more about your inquiry..."
                   />
                 </motion.div>
@@ -270,7 +274,7 @@ export default function ContactPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   viewport={{ once: true }}
-                  className="w-full px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                  className="w-full px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:bg-primary/70"
                 >
                   <Send className="w-5 h-5" />
                   Send Message

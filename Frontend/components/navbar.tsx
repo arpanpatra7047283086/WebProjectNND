@@ -77,7 +77,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <Link href="/contact">
               <motion.button
-                className="hidden sm:inline-flex px-6 py-2.5 bg-gradient-to-r from-primary to-primary text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-primary/25 transition-all"
+                className="hidden sm:inline-flex px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-primary/25 transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -127,7 +127,7 @@ export function Navbar() {
             ))}
             <Link href="/contact">
               <motion.button
-                className="w-full mt-2 px-4 py-3 bg-gradient-to-r from-primary to-primary text-white rounded-lg font-semibold text-sm"
+                className="w-full mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsOpen(false)}

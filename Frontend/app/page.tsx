@@ -217,7 +217,7 @@ export default function HomePage() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 rounded-lg bg-gradient-to-r from-primary to-primary text-white font-semibold hover:shadow-lg transition-all flex items-center gap-2"
+                    className="px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg transition-all flex items-center gap-2"
                   >
                     Get Started <ArrowRight className="w-5 h-5" />
                   </motion.button>
