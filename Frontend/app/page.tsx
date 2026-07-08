@@ -151,24 +151,32 @@ export default function HomePage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center bg-gradient-to-b from-white via-blue-50/40 to-white">
+      <section className="relative min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
             animate={{
-              x: [0, 50, 0],
-              y: [0, -50, 0],
+              x: [0, 100, 0],
+              y: [0, -100, 0],
             }}
-            transition={{ duration: 15, repeat: Infinity }}
-            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/15 to-accent/15 rounded-full blur-3xl"
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-cyan-500/20 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
-              x: [0, -50, 0],
-              y: [0, 50, 0],
+              x: [0, -100, 0],
+              y: [0, 100, 0],
             }}
-            transition={{ duration: 20, repeat: Infinity }}
-            className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-accent/15 to-primary/15 rounded-full blur-3xl"
+            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-purple-500/30 to-pink-500/20 rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, 50, -50, 0],
+              y: [0, 50, -50, 0],
+            }}
+            transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"
           />
         </div>
 
@@ -184,27 +192,28 @@ export default function HomePage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
+                className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 mb-6 backdrop-blur-md"
+                whileHover={{ scale: 1.05 }}
               >
-                <span className="text-sm font-semibold text-primary">Transforming India's Financial Landscape</span>
+                <span className="text-sm font-bold text-cyan-300">⚡ Transforming India's Financial Landscape</span>
               </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-5xl sm:text-6xl font-bold leading-tight mb-6"
+                className="text-5xl sm:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 bg-clip-text text-transparent"
               >
-                Your All-in-One Financial <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Hub</span>
+                Your All-in-One Financial Hub
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl text-muted-foreground mb-8 leading-relaxed"
+                className="text-lg text-blue-100 mb-8 leading-relaxed"
               >
-                Seamlessly manage recharges, bill payments, investments, insurance, and banking from a single, secure platform.
+                Seamlessly manage recharges, bill payments, investments, insurance, and banking from a single, secure platform. 500K+ users trust eSmartPay.
               </motion.p>
 
               <motion.div
@@ -215,17 +224,17 @@ export default function HomePage() {
               >
                 <Link href="/contact">
                   <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileHover={{ scale: 1.08, y: -4 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all flex items-center gap-2"
+                    className="px-8 py-4 rounded-xl font-bold text-lg shadow-2xl shadow-blue-500/40 transition-all flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white hover:shadow-2xl hover:shadow-purple-500/50"
                   >
-                    Get Started <ArrowRight className="w-5 h-5" />
+                    Get Started <ArrowRight className="w-5 h-5 animate-pulse" />
                   </motion.button>
                 </Link>
                 <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileHover={{ scale: 1.08, y: -4 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 rounded-xl border border-border bg-white text-foreground font-semibold hover:bg-gray-50 hover:shadow-md transition-all"
+                  className="px-8 py-4 rounded-xl border-2 border-cyan-400/50 bg-white/10 text-cyan-200 font-bold backdrop-blur-md hover:bg-white/20 hover:border-cyan-300 transition-all"
                 >
                   Learn More
                 </motion.button>
@@ -292,7 +301,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50/30">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -301,15 +310,27 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">Explore Our Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive suite of financial tools designed for your convenience.
+            <motion.h2 
+              className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-slate-900 via-blue-700 to-purple-700 bg-clip-text text-transparent"
+              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+              transition={{ duration: 5, repeat: Infinity }}
+            >
+              Explore Our Services
+            </motion.h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+              Powerful financial tools designed for everyone. Start managing your money smartly with eSmartPay.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => {
               const Icon = service.icon
+              const gradients = [
+                'from-cyan-400 to-blue-500',
+                'from-blue-400 to-purple-500',
+                'from-purple-400 to-pink-500',
+                'from-pink-400 to-orange-500'
+              ]
               return (
                 <motion.div
                   key={index}
@@ -317,22 +338,30 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
                 >
                   <Link href={service.href}>
-                    <div className="group bg-card border border-border rounded-xl p-8 h-full cursor-pointer hover:shadow-lg hover:border-primary/50 transition-all">
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-4"
-                      >
-                        <Icon className="w-7 h-7 text-primary" />
-                      </motion.div>
-                      <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                      <p className="text-muted-foreground">{service.description}</p>
-                      <div className="mt-4 flex items-center text-primary text-sm font-semibold group-hover:translate-x-1 transition-transform">
-                        Learn more <ArrowRight className="w-4 h-4 ml-2" />
+                    <motion.div 
+                      className={`group relative bg-gradient-to-br ${gradients[index]} p-1 rounded-2xl cursor-pointer`}
+                      animate={{ boxShadow: ["0 0 20px rgba(34, 211, 238, 0.3)", "0 0 40px rgba(59, 130, 246, 0.4)", "0 0 20px rgba(34, 211, 238, 0.3)"] }}
+                      transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                    >
+                      <div className="bg-white rounded-2xl p-8 h-full">
+                        <motion.div
+                          whileHover={{ scale: 1.15, rotate: 10 }}
+                          className={`w-16 h-16 rounded-xl bg-gradient-to-br ${gradients[index]} flex items-center justify-center mb-6 shadow-lg shadow-${gradients[index].split(' ')[1]}/30`}
+                        >
+                          <Icon className="w-8 h-8 text-white" />
+                        </motion.div>
+                        <h3 className="text-xl font-bold mb-3 text-slate-900">{service.title}</h3>
+                        <p className="text-gray-600 text-sm mb-6">{service.description}</p>
+                        <motion.div 
+                          className={`flex items-center text-sm font-bold bg-gradient-to-r ${gradients[index]} bg-clip-text text-transparent group-hover:translate-x-2 transition-transform`}
+                        >
+                          Learn more <ArrowRight className="w-4 h-4 ml-2" />
+                        </motion.div>
                       </div>
-                    </div>
+                    </motion.div>
                   </Link>
                 </motion.div>
               )

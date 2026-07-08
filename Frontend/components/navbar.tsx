@@ -35,10 +35,10 @@ export function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${
         scrolled
-          ? 'bg-white/95 border-b border-gray-200 shadow-lg'
-          : 'bg-white/80 border-b border-transparent shadow-none'
+          ? 'bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 border-b-2 border-cyan-400/40 shadow-2xl shadow-blue-900/50'
+          : 'bg-gradient-to-r from-slate-900/90 via-blue-900/90 to-slate-900/90 border-b-2 border-cyan-400/20 shadow-xl shadow-blue-900/30'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -46,18 +46,28 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+          {/* Logo with Animation */}
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="flex items-center gap-2"
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-3"
           >
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">$</span>
-              </div>
+            <Link href="/" className="flex items-center gap-3">
+              <motion.div 
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/50 relative"
+                animate={{ boxShadow: ["0 0 20px rgba(34, 211, 238, 0.5)", "0 0 30px rgba(59, 130, 246, 0.5)", "0 0 20px rgba(168, 85, 247, 0.5)"] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <span className="text-white font-black text-2xl">₹</span>
+              </motion.div>
               <div className="hidden sm:flex flex-col">
-                <span className="text-lg font-bold text-foreground">eSmartPay</span>
-                <span className="text-xs text-muted-foreground">Financial Hub</span>
+                <motion.span 
+                  className="text-xl font-black bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent"
+                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  eSmartPay
+                </motion.span>
+                <span className="text-xs text-cyan-300/80 font-semibold">Your Financial Freedom</span>
               </div>
             </Link>
           </motion.div>
@@ -73,11 +83,11 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="px-4 py-2 text-foreground font-medium text-sm relative group hover:text-primary transition-colors"
+                  className="px-4 py-2 text-cyan-100 font-semibold text-sm relative group hover:text-cyan-300 transition-all"
                 >
                   <span className="relative z-10">{item.label}</span>
                   <motion.span
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"
+                    className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
@@ -92,8 +102,8 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <Link href="/contact">
               <motion.button
-                className="hidden sm:inline-flex px-6 py-2.5 bg-primary text-primary-foreground rounded-xl font-semibold text-sm shadow-md shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
-                whileHover={{ scale: 1.05, y: -2 }}
+                className="hidden sm:inline-flex px-6 py-2.5 font-bold text-sm rounded-xl shadow-lg shadow-cyan-500/40 transition-all bg-gradient-to-r from-cyan-400 to-blue-500 text-white hover:shadow-xl hover:shadow-cyan-500/60"
+                whileHover={{ scale: 1.08, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Get Started
@@ -102,15 +112,15 @@ export function Navbar() {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="lg:hidden p-2 hover:bg-secondary rounded-lg transition-colors"
+              className="lg:hidden p-2 hover:bg-cyan-500/20 rounded-lg transition-all border border-cyan-400/30"
               onClick={() => setIsOpen(!isOpen)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               {isOpen ? (
-                <X className="w-6 h-6 text-foreground" />
+                <X className="w-6 h-6 text-cyan-300" />
               ) : (
-                <Menu className="w-6 h-6 text-foreground" />
+                <Menu className="w-6 h-6 text-cyan-300" />
               )}
             </motion.button>
           </div>
@@ -118,7 +128,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <motion.div
-          className="lg:hidden overflow-hidden bg-white border-t border-gray-200"
+          className="lg:hidden overflow-hidden bg-gradient-to-b from-slate-900 to-blue-900 border-t-2 border-cyan-400/30"
           initial={{ height: 0 }}
           animate={{ height: isOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
@@ -133,7 +143,7 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="block px-4 py-3 text-foreground font-medium text-sm hover:bg-secondary/50 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-cyan-100 font-semibold text-sm hover:bg-cyan-500/20 rounded-lg transition-all border border-transparent hover:border-cyan-400/30"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -142,7 +152,7 @@ export function Navbar() {
             ))}
             <Link href="/contact">
               <motion.button
-                className="w-full mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm"
+                className="w-full mt-2 px-4 py-3 font-bold text-sm rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-white shadow-lg shadow-cyan-500/40"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsOpen(false)}
