@@ -7,12 +7,12 @@ import Image from 'next/image'
 
 const services = [
   {
-    image: '/services/recharges.webp',
+    image: '/services/recharges.png',
     title: 'Mobile Recharge',
     description: 'Instant mobile and DTH recharges with zero hassle. Pay bills for any service provider across India.'
   },
   {
-    image: '/services/utility.jpg',
+    image: '/services/utility.png',
     title: 'Utility Payments',
     description: 'Pay all your bills - electricity, water, gas, internet - in one place with instant confirmation.'
   },
