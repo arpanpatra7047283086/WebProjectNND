@@ -283,7 +283,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl blur-2xl" />
                 <div className="relative bg-card border border-border rounded-3xl p-8 backdrop-blur-sm">
                   <div className="space-y-4">
-                    {[1, 2, 3].map((i) => (
+                    {[1].map((i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, x: -10 }}
@@ -295,8 +295,122 @@ export default function HomePage() {
                           <Zap className="w-5 h-5 text-primary" />
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm font-semibold">Fast & Secure</p>
-                          <p className="text-xs text-muted-foreground">Your transactions protected</p>
+                          <p className="text-sm font-semibold">Swift & Safe</p>
+                          <p className="text-xs text-muted-foreground">Every payment, fully shielded</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    {[2].map((i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                        className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                          <Zap className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold">Quick & Reliable</p>
+                          <p className="text-xs text-muted-foreground">Your money moves with confidence</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    {[1].map((i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                        className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                          <Zap className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold">Secure Transactions</p>
+                          <p className="text-xs text-muted-foreground">Fast processing, zero worries</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    {[1].map((i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                        className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                          <Zap className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold">Trusted & Efficient</p>
+                          <p className="text-xs text-muted-foreground">Peace of mind with every transfer</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    {[1].map((i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                        className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                          <Zap className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold">Instant Protection</p>
+                          <p className="text-xs text-muted-foreground">Security built into speed</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    {[1].map((i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                        className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                          <Zap className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold">Safe Payments</p>
+                          <p className="text-xs text-muted-foreground">Fast, reliable, and worry‑free</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    {[1].map((i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                        className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                          <Zap className="w-5 h-5 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold">Speed with Security</p>
+                          <p className="text-xs text-muted-foreground">Your trust, our priority</p>
                         </div>
                       </motion.div>
                     ))}
