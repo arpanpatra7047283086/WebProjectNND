@@ -10,13 +10,13 @@ import { useState } from 'react'
 
 const services = [
   {
-    image: '/services/recharges.png',
+    image: '/services/recharges.webp',
     title: 'Mobile Recharge',
     description: 'Top up your mobile and DTH services in seconds.',
     href: '/services/mobile-recharge'
   },
   {
-    image: '/services/utility.png',
+    image: '/services/utility.jpg',
     title: 'Utility Payments',
     description: 'Pay electricity, water, gas, and all utility bills.',
     href: '/services/bill-payments'
