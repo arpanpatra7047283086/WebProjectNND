@@ -10,13 +10,13 @@ export default function RefundPolicyPage() {
       badge="Fair & Transparent"
       title="Refund"
       highlight="Policy"
-      intro="This policy outlines how refunds and reversals are handled for transactions made through the eSmartPay platform."
+      intro="This policy outlines how refunds and reversals are handled for transactions made through the Neoplas Fintech platform."
       lastUpdated="January 2024"
       sections={[
         {
           heading: 'General Principles',
           paragraphs: [
-            'Most transactions processed through eSmartPay, such as recharges and bill payments, are completed instantly and are non-reversible once successful. Refunds apply primarily to failed or duplicate transactions.',
+            'Most transactions processed through Neoplas Fintech, such as recharges and bill payments, are completed instantly and are non-reversible once successful. Refunds apply primarily to failed or duplicate transactions.',
           ],
         },
         {

@@ -147,7 +147,7 @@ export function ServiceDetail({
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to get started?</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Join thousands of users who trust eSmartPay for their financial needs.
+            Join thousands of users who trust Neoplas Fintech for their financial needs.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/contact">

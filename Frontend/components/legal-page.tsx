@@ -119,7 +119,7 @@ export function LegalPage({
               Reach out to our team and we will be happy to help clarify anything.
             </p>
             <a
-              href="mailto:legal@esmartpay.in"
+              href="mailto:legal@neoplasfintech.in"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-black text-sm hover:bg-primary/90 transition-colors"
             >
               Contact Us

@@ -114,7 +114,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="text-lg text-muted-foreground mb-8"
           >
-            Join thousands of users who trust eSmartPay for their financial needs
+            Join thousands of users who trust Neoplas Fintech for their financial needs
           </motion.p>
           <motion.button
             whileHover={{ scale: 1.05 }}

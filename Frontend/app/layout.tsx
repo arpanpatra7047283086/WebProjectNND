@@ -15,7 +15,7 @@ const _inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'eSmartPay - Smart Fintech Solutions That Actually Work',
+  title: 'Neoplas Fintech - Smart Fintech Solutions That Actually Work',
   description: 'All-in-one fintech platform for recharges, bill payments, investments, insurance, and banking services',
 }
 

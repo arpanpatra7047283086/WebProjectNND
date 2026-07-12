@@ -10,7 +10,7 @@ export default function TermsAndConditions() {
       badge="Service Level Agreement"
       title="Terms and"
       highlight="Conditions"
-      intro="Standard operating procedures and legal framework governing the partnership between ISHMART TECHNOGLOBAL SERVICES PRIVATE LIMITED (eSmartPay) and its valued Sub-Users."
+      intro="Standard operating procedures and legal framework governing the partnership between Neoplas Fintech Private Limited and its valued Sub-Users."
       lastUpdated="January 2024"
       sections={[
         {
@@ -29,14 +29,14 @@ export default function TermsAndConditions() {
             'Product: Set of services permitting money transfer, POS, Mobile Apps, and value-added services.',
             'Force Majeure: Accidents, acts of war, catastrophes, or significant adverse events beyond control.',
             'Fraud: Theft or falsification of identity, accounts, credentials, or actual events.',
-            'Software: Custom-built software owned by ISHMART or licensed from third-party suppliers.',
+            'Software: Custom-built software owned by Neoplas Fintech Private Limited or licensed from third-party suppliers.',
             'Sub-Users: Individuals or entities appointed by the User to facilitate Products disbursement.',
           ],
         },
         {
           heading: 'Scope of Services',
           paragraphs: [
-            'The USER hereby agrees to facilitate the services of ISHMART to the SUB-USER and the SUB-USER hereby agrees to avail the Services. The SUB-USER will not undertake any activity that violates any provision of law.',
+            'The USER hereby agrees to facilitate the services of Neoplas Fintech Private Limited to the SUB-USER and the SUB-USER hereby agrees to avail the Services. The SUB-USER will not undertake any activity that violates any provision of law.',
             'The SUB-USER shall primarily act as a conduit for receiving and delivering small value remittances through Aadhar-based payments and other agreed payment instruments.',
             'The SUB-USER agrees to perform all roles, responsibilities, and functions specified. USER reserves the right to vary the Services with written advice, which becomes effective immediately.',
           ],
@@ -44,8 +44,8 @@ export default function TermsAndConditions() {
         {
           heading: 'Intellectual Property',
           paragraphs: [
-            'All intellectual property rights to Technology and Copyrights remain the property of ISHMART. Trademarks belong exclusively to ISHMART.',
-            'The SUB-USER agrees not to sell, license, distribute, copy, modify, or create derivative works from the Materials or ISHMART\'s IP. Reverse engineering or disassembling any part of the software is strictly prohibited.',
+            'All intellectual property rights to Technology and Copyrights remain the property of Neoplas Fintech Private Limited. Trademarks belong exclusively to Neoplas Fintech Private Limited.',
+            'The SUB-USER agrees not to sell, license, distribute, copy, modify, or create derivative works from the Materials or Neoplas Fintech Private Limited\'s IP. Reverse engineering or disassembling any part of the software is strictly prohibited.',
           ],
         },
         {
@@ -76,8 +76,8 @@ export default function TermsAndConditions() {
         {
           heading: 'Liability & Indemnity',
           paragraphs: [
-            'ISHMART shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use or inability to use the Services.',
-            'The SUB-USER agrees to indemnify and hold harmless ISHMART from any claims, losses, or damages arising from the SUB-USER\'s breach of this agreement or violation of applicable laws.',
+            'Neoplas Fintech Private Limited shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use or inability to use the Services.',
+            'The SUB-USER agrees to indemnify and hold harmless Neoplas Fintech Private Limited from any claims, losses, or damages arising from the SUB-USER\'s breach of this agreement or violation of applicable laws.',
           ],
         },
         {
@@ -86,8 +86,8 @@ export default function TermsAndConditions() {
             'Both parties commit to maintaining the highest standards of integrity and compliance with all anti-fraud and anti-bribery laws.',
           ],
           bullets: [
-            'ISHMART has the right to investigate any suspected fraudulent activity.',
-            'SUB-USER must report any suspected fraud immediately to ISHMART.',
+            'Neoplas Fintech Private Limited has the right to investigate any suspected fraudulent activity.',
+            'SUB-USER must report any suspected fraud immediately to Neoplas Fintech Private Limited.',
             'Any violation of anti-bribery laws will result in immediate termination of services.',
             'Compliance with the Foreign Corrupt Practices Act (FCPA) and Indian Prevention of Corruption Act is mandatory.',
           ],
@@ -96,8 +96,8 @@ export default function TermsAndConditions() {
           heading: 'Termination',
           paragraphs: [
             'Either party may terminate this agreement upon 30 days written notice if the other party materially breaches its obligations and fails to cure within 15 days of receiving notice.',
-            'ISHMART may terminate immediately if the SUB-USER engages in fraud, illegal activity, or poses a regulatory risk.',
-            'Upon termination, all outstanding balances must be settled, and all materials belonging to ISHMART must be returned immediately.',
+            'Neoplas Fintech Private Limited may terminate immediately if the SUB-USER engages in fraud, illegal activity, or poses a regulatory risk.',
+            'Upon termination, all outstanding balances must be settled, and all materials belonging to Neoplas Fintech Private Limited must be returned immediately.',
           ],
         },
       ]}

@@ -131,7 +131,7 @@ const partners = [
 ]
 
 const journeyMilestones = [
-  { year: '2018', title: 'Our Inception', description: 'eSmartPay was founded with a bold vision to redefine the future of finance in India.' },
+  { year: '2018', title: 'Our Inception', description: 'Neoplas Fintech was founded with a bold vision to redefine the future of finance in India.' },
   { year: '2019', title: 'Strategic Expansion', description: 'We extended our services, establishing a strong presence in major cities across India.' },
   { year: '2021', title: 'Nationwide Growth', description: 'Achieved PAN India operations, growing our network to over 25,000 Direct Business Outlets.' },
   { year: '2023', title: 'Driving Innovation', description: 'Introduced a new wave of pioneering financial products and cutting-edge solutions.' },
@@ -430,7 +430,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">Why Choose eSmartPay?</h2>
+            <h2 className="text-4xl font-bold mb-4">Why Choose Neoplas Fintech?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Discover the advantages that make us a trusted choice for thousands across India.
             </p>
@@ -796,7 +796,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-lg text-muted-foreground mb-8"
           >
-            Join thousands of users who are simplifying their financial lives with eSmartPay.
+            Join thousands of users who are simplifying their financial lives with Neoplas Fintech.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}

@@ -73,7 +73,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl font-bold mb-6"
           >
-            About eSmartPay
+            About Neoplas Fintech
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

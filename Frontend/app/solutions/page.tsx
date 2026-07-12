@@ -93,7 +93,7 @@ export default function SolutionsPage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-xl text-muted-foreground"
           >
-            Unlock Your Business Potential with eSmartPay's Advanced Payment and Banking Services.
+            Unlock Your Business Potential with Neoplas Fintech's Advanced Payment and Banking Services.
           </motion.p>
         </div>
       </section>
@@ -147,7 +147,7 @@ export default function SolutionsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">Become an eSmartPay Agent</h2>
+            <h2 className="text-3xl font-bold mb-4">Become a Neoplas Fintech Agent</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Join our expanding network of successful agents and unlock a new stream of profitable income.
             </p>
@@ -196,7 +196,7 @@ export default function SolutionsPage() {
             viewport={{ once: true }}
             className="text-3xl font-bold text-center mb-12"
           >
-            Why Choose eSmartPay?
+            Why Choose Neoplas Fintech?
           </motion.h2>
           <div className="space-y-6">
             {whyChooseUsFeatures.map((feature, index) => {

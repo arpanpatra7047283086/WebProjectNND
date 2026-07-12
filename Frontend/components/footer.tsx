@@ -111,7 +111,7 @@ export function Footer() {
               <div className="inline-flex bg-white rounded-lg px-3 py-2 shadow-sm ring-1 ring-primary/20">
                 <Image
                   src="/esmartpay-logo.png"
-                  alt="eSmartPay logo"
+                  alt="Neoplas Fintech logo"
                   width={170}
                   height={44}
                   className="h-9 w-auto object-contain"
@@ -169,13 +169,13 @@ export function Footer() {
             <h4 className="text-lg font-bold text-foreground mb-4">Contact</h4>
             <div className="space-y-4">
               <a
-                href="mailto:support@esmartpay.com"
+                href="mailto:support@neoplasfintech.in"
                 className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors group"
               >
                 <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Email</p>
-                  <p className="text-xs text-muted-foreground">support@esmartpay.com</p>
+                  <p className="text-xs text-muted-foreground">support@neoplasfintech.in</p>
                 </div>
               </a>
               <a
@@ -217,7 +217,7 @@ export function Footer() {
           viewport={{ once: true }}
         >
           <p>
-            © 2024 eSmartPay. All Rights Reserved. | ISHMART TECHNOGLOBAL SERVICES PRIVATE LIMITED
+            © 2024 Neoplas Fintech Private Limited. All Rights Reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary transition-colors font-medium">

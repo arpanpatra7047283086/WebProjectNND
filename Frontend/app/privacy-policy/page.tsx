@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
       badge="Your Privacy Matters"
       title="Privacy"
       highlight="Policy"
-      intro="This policy explains how ISHMART TECHNOGLOBAL SERVICES PRIVATE LIMITED (eSmartPay) collects, uses, and protects your personal information."
+      intro="This policy explains how Neoplas Fintech Private Limited collects, uses, and protects your personal information."
       lastUpdated="January 2024"
       sections={[
         {

@@ -37,10 +37,10 @@ export function AboutSection() {
         >
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              About eSmartPay
+              About Neoplas Fintech
             </h2>
             <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-              We are Smart Pay—The World of Fintech. Our vision is to assist in providing every underserved segment of the population access to financial services.
+              We are Neoplas Fintech—The World of Fintech. Our vision is to assist in providing every underserved segment of the population access to financial services.
             </p>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               We understand consumer needs and provide services tailored to their lifestyle. We're building an unparalleled platform that brings financial services to your doorstep, regardless of your location.

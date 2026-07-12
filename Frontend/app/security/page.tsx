@@ -10,7 +10,7 @@ export default function SecurityPage() {
       badge="Safety First"
       title="Security"
       highlight="Practices"
-      intro="Security is at the core of everything we do. Here is how eSmartPay keeps your money and data safe."
+      intro="Security is at the core of everything we do. Here is how Neoplas Fintech keeps your money and data safe."
       lastUpdated="January 2024"
       sections={[
         {
@@ -38,7 +38,7 @@ export default function SecurityPage() {
           bullets: [
             'Use a strong, unique password and never share your credentials.',
             'Enable available security features such as OTP verification.',
-            'eSmartPay will never ask for your PIN, OTP, or password over calls or messages.',
+            'Neoplas Fintech will never ask for your PIN, OTP, or password over calls or messages.',
           ],
         },
         {

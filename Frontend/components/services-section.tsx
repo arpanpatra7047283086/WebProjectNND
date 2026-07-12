@@ -137,7 +137,7 @@ export function ServicesSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
-            Why Choose eSmartPay?
+            Why Choose Neoplas Fintech?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => {

@@ -43,7 +43,7 @@ export function ContactSection() {
             Get Started Today
           </h2>
           <p className="text-lg text-muted-foreground">
-            Join thousands of successful agents and become part of eSmartPay network
+            Join thousands of successful agents and become part of the Neoplas Fintech network
           </p>
         </motion.div>
 

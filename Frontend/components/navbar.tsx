@@ -37,11 +37,11 @@ export function Navbar() {
             whileHover={{ scale: 1.02 }}
             className="flex items-center gap-2"
           >
-            <Link href="/" className="flex items-center gap-2" aria-label="eSmartPay home">
+            <Link href="/" className="flex items-center gap-2" aria-label="Neoplas Fintech home">
               <div className="bg-white rounded-lg px-3 py-2 flex items-center shadow-sm ring-1 ring-primary/20">
                 <Image
                   src="/esmartpay-logo.png"
-                  alt="eSmartPay logo"
+                  alt="Neoplas Fintech logo"
                   width={150}
                   height={40}
                   priority
