@@ -68,7 +68,7 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
         >
           <motion.button
-            className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg transition-all"
+            className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg transition-all cursor-pointer"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

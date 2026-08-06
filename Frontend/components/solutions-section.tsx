@@ -84,7 +84,7 @@ export function SolutionsSection() {
                   y: -10,
                   boxShadow: '0 30px 50px -12px rgba(0, 102, 255, 0.15)',
                 }}
-                className="group relative bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 overflow-hidden"
+                className="group relative bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 overflow-hidden cursor-pointer"
               >
                 {/* Background animation */}
                 <motion.div
@@ -145,7 +145,7 @@ export function SolutionsSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
+            className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
           >
             Start Your Journey Today
           </motion.button>
