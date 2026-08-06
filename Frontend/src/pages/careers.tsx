@@ -3,7 +3,7 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import Link from '@/components/app-link'
 import { Briefcase, MapPin, Clock, Rocket, Heart, GraduationCap, Users, ArrowRight } from 'lucide-react'
 
 const perks = [

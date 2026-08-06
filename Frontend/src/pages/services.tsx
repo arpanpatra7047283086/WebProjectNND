@@ -3,7 +3,7 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Image from '@/components/app-image'
 
 const services = [
   {

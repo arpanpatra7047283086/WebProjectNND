@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Mail, MapPin, Phone, Send, Code2, LinkIcon, Heart, ArrowRight } from 'lucide-react'
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from '@/components/app-link'
+import Image from '@/components/app-image'
 
 export function Footer() {
   const containerVariants = {

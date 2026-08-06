@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react'; // Import useEffect
 import { Menu, X, ChevronDown } from 'lucide-react'
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from '@/components/app-link'
+import Image from '@/components/app-image'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)

@@ -3,7 +3,7 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import Link from '@/components/app-link'
 import { ArrowRight, CheckCircle2, type LucideIcon } from 'lucide-react'
 
 export interface ServiceDetailProps {

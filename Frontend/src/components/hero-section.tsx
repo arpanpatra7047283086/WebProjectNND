@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
-import Link from 'next/link'
+import Link from '@/components/app-link'
 
 export function HeroSection() {
   const containerVariants = {

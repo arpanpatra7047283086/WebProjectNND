@@ -3,8 +3,8 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from '@/components/app-link'
+import Image from '@/components/app-image'
 import { TrendingUp, Shield, ArrowRight, CheckCircle2, Zap, Layers, Code2, Phone, ThumbsUp, Award, Handshake, Users, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 
