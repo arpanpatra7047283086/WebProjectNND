@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react'; // Import useEffect
+import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react'
 import Link from '@/components/app-link'
 import Image from '@/components/app-image'
@@ -91,7 +91,7 @@ export function Navbar() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-3">
-            {/* Login Button */}
+            {/* Login Button (Desktop Only) */}
             <Link href="https://esmartpay.in/login">
               <motion.button
                 className="hidden sm:inline-flex px-6 py-2.5 border-2 border-primary text-primary rounded-lg font-semibold text-sm hover:bg-primary/10 transition-all"
@@ -101,6 +101,8 @@ export function Navbar() {
                 Login
               </motion.button>
             </Link>
+            
+            {/* Get Started Button (Desktop Only) */}
             <Link href="/contact">
               <motion.button
                 className="hidden sm:inline-flex px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-primary/25 transition-all"
@@ -151,16 +153,33 @@ export function Navbar() {
                 </Link>
               </motion.div>
             ))}
-            <Link href="/contact">
-              <motion.button
-                className="w-full mt-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm cursor-pointer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => setIsOpen(false)}
-              >
-                Get Started
-              </motion.button>
-            </Link>
+            
+            {/* Mobile Action Buttons */}
+            <div className="flex flex-col gap-2 mt-4 pt-2 border-t border-border/50">
+              {/* Mobile Login Button */}
+              <Link href="https://esmartpay.in/login">
+                <motion.button
+                  className="w-full px-4 py-3 border-2 border-primary text-primary rounded-lg font-semibold text-sm cursor-pointer hover:bg-primary/10 transition-all"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Login
+                </motion.button>
+              </Link>
+              
+              {/* Mobile Get Started Button */}
+              <Link href="/contact">
+                <motion.button
+                  className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm cursor-pointer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Started
+                </motion.button>
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>
