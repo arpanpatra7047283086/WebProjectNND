@@ -3,38 +3,45 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { motion } from 'framer-motion'
+import Link from '@/components/app-link'
 import Image from '@/components/app-image'
 
 const services = [
   {
     image: '/services/recharges.png',
     title: 'Mobile Recharge',
-    description: 'Instant mobile and DTH recharges with zero hassle. Pay bills for any service provider across India.'
+    description: 'Instant mobile and DTH recharges with zero hassle. Pay bills for any service provider across India.',
+    href: '/services/mobile-recharge',
   },
   {
     image: '/services/utility.png',
     title: 'Utility Payments',
-    description: 'Pay all your bills - electricity, water, gas, internet - in one place with instant confirmation.'
+    description: 'Pay all your bills - electricity, water, gas, internet - in one place with instant confirmation.',
+    href: '/services/bill-payments',
   },
   {
     image: '/services/aeps.png',
     title: 'AePS',
-    description: 'Aadhaar-enabled payments for seamless transactions and agent network expansion.'
+    description: 'Aadhaar-enabled payments for seamless transactions and agent network expansion.',
+    href: '/services/aeps',
   },
   {
     image: '/services/matm.png',
     title: 'Micro ATM',
-    description: 'Card-based cash withdrawal and management services available 24/7 at your convenience.'
+    description: 'Card-based cash withdrawal and management services available 24/7 at your convenience.',
+    href: '/services/micro-atm',
   },
   {
     image: '/services/collection.png',
     title: 'Collection',
-    description: 'Seamless payment collection tools to grow and manage your business with ease.'
+    description: 'Seamless payment collection tools to grow and manage your business with ease.',
+    href: '/services/collection',
   },
   {
     image: '/services/pancard.png',
     title: 'PAN Card',
-    description: 'Apply for new and duplicate PAN cards quickly with a simple, guided process.'
+    description: 'Apply for new and duplicate PAN cards quickly with a simple, guided process.',
+    href: '/services/pancard',
   },
 ]
 
@@ -72,22 +79,24 @@ export default function ServicesPage() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="bg-card border border-border rounded-xl p-8 h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 flex flex-col items-center text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      className="mb-4"
-                    >
-                      <Image
-                        src={service.image || "/placeholder.svg"}
-                        alt={service.title}
-                        width={112}
-                        height={112}
-                        className="w-28 h-28 object-contain"
-                      />
-                    </motion.div>
-                    <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                  </div>
+                  <Link href={service.href}>
+                    <div className="bg-card border border-border rounded-xl p-8 h-full hover:shadow-lg hover:border-primary/50 transition-all duration-300 flex flex-col items-center text-center cursor-pointer">
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className="mb-4"
+                      >
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          width={112}
+                          height={112}
+                          className="w-28 h-28 object-contain"
+                        />
+                      </motion.div>
+                      <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                    </div>
+                  </Link>
                 </motion.div>
               )
             })}

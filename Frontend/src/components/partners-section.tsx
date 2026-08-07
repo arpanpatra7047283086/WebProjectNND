@@ -72,7 +72,7 @@ export function PartnersSection() {
               className="group flex items-center justify-center rounded-2xl border border-border bg-white p-6 h-32 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/40"
             >
               <img
-                src={partner.src || '/placeholder.svg'}
+                src={partner.src}
                 alt={`${partner.name} logo`}
                 className="max-h-16 w-auto max-w-full object-contain grayscale opacity-80 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
                 loading="lazy"
@@ -93,7 +93,7 @@ export function PartnersSection() {
                 className="flex items-center justify-center rounded-xl border border-border bg-white px-8 py-4 shadow-sm"
               >
                 <img
-                  src={badge.src || '/placeholder.svg'}
+                  src={badge.src}
                   alt={`${badge.name} badge`}
                   className="max-h-12 w-auto object-contain"
                   loading="lazy"

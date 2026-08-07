@@ -11,27 +11,39 @@ import SecurityPage from '@/pages/security'
 import TermsAndConditionsPage from '@/pages/terms-and-conditions'
 import MobileRechargePage from '@/pages/mobile-recharge'
 import BillPaymentsPage from '@/pages/bill-payments'
+import AepsPage from '@/pages/aeps'
+import MicroAtmPage from '@/pages/micro-atm'
+import CollectionPage from '@/pages/collection'
+import PancardPage from '@/pages/pancard'
 import InvestmentsPage from '@/pages/investments'
 import InsurancePage from '@/pages/insurance'
+import { ScrollToTop } from '@/components/scroll-to-top'
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/services" element={<ServicesPage />} />
-      <Route path="/services/mobile-recharge" element={<MobileRechargePage />} />
-      <Route path="/services/bill-payments" element={<BillPaymentsPage />} />
-      <Route path="/services/investments" element={<InvestmentsPage />} />
-      <Route path="/services/insurance" element={<InsurancePage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/solutions" element={<SolutionsPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/careers" element={<CareersPage />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-      <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
-      <Route path="/refund-policy" element={<RefundPolicyPage />} />
-      <Route path="/security" element={<SecurityPage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/mobile-recharge" element={<MobileRechargePage />} />
+        <Route path="/services/bill-payments" element={<BillPaymentsPage />} />
+        <Route path="/services/aeps" element={<AepsPage />} />
+        <Route path="/services/micro-atm" element={<MicroAtmPage />} />
+        <Route path="/services/collection" element={<CollectionPage />} />
+        <Route path="/services/pancard" element={<PancardPage />} />
+        <Route path="/services/investments" element={<InvestmentsPage />} />
+        <Route path="/services/insurance" element={<InsurancePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/solutions" element={<SolutionsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+        <Route path="/refund-policy" element={<RefundPolicyPage />} />
+        <Route path="/security" element={<SecurityPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
   )
 }

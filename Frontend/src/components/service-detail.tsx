@@ -2,6 +2,7 @@
 
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import Image from '@/components/app-image'
 import { motion } from 'framer-motion'
 import Link from '@/components/app-link'
 import { ArrowRight, CheckCircle2, type LucideIcon } from 'lucide-react'
@@ -11,6 +12,8 @@ export interface ServiceDetailProps {
   eyebrow: string
   title: string
   description: string
+  image?: string
+  imageAlt?: string
   features: { icon: LucideIcon; title: string; description: string }[]
   benefits: string[]
   steps: { title: string; description: string }[]
@@ -21,6 +24,8 @@ export function ServiceDetail({
   eyebrow,
   title,
   description,
+  image,
+  imageAlt,
   features,
   benefits,
   steps,
@@ -35,39 +40,76 @@ export function ServiceDetail({
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-2 mb-6"
-          >
-            <span className="text-sm font-semibold text-primary">{eyebrow}</span>
-          </motion.div>
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-6 shadow-lg"
-          >
-            <Icon className="w-10 h-10 text-white" />
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.6 }}
-            className="text-4xl sm:text-5xl font-bold mb-6 text-balance"
-          >
-            {title}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25, duration: 0.6 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-          >
-            {description}
-          </motion.p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="text-center lg:text-left">
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-2 mb-6"
+              >
+                <span className="text-sm font-semibold text-primary">{eyebrow}</span>
+              </motion.div>
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto lg:mx-0 mb-6 shadow-lg"
+              >
+                <Icon className="w-10 h-10 text-white" />
+              </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15, duration: 0.6 }}
+                className="text-4xl sm:text-5xl font-bold mb-6 text-balance"
+              >
+                {title}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.6 }}
+                className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              >
+                {description}
+              </motion.p>
+            </div>
+
+            {image ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="relative"
+              >
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/25 to-accent/20 blur-2xl" />
+                <div className="relative overflow-hidden rounded-3xl border border-border bg-card/85 p-5 shadow-2xl backdrop-blur">
+                  <div className="rounded-2xl bg-secondary/60 p-5">
+                    <Image
+                      src={image}
+                      alt={imageAlt ?? `${title} illustration`}
+                      width={800}
+                      height={600}
+                      priority
+                      className="h-[260px] w-full object-contain sm:h-[320px]"
+                    />
+                  </div>
+                  <div className="mt-5 grid grid-cols-2 gap-3 text-left">
+                    <div className="rounded-2xl border border-border bg-background/80 p-4">
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground">Fast setup</p>
+                      <p className="mt-1 text-sm font-semibold">Ready for mobile use</p>
+                    </div>
+                    <div className="rounded-2xl border border-border bg-background/80 p-4">
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground">Secure flow</p>
+                      <p className="mt-1 text-sm font-semibold">Built for safe payments</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ) : null}
+          </div>
         </div>
       </section>
 

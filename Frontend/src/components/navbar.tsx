@@ -43,7 +43,7 @@ export function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.02 }}
@@ -90,7 +90,7 @@ export function Navbar() {
           </div>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Login Button (Desktop Only) */}
             <Link href="https://esmartpay.in/login">
               <motion.button
@@ -131,12 +131,12 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <motion.div
-          className="lg:hidden overflow-hidden bg-background/95 backdrop-blur-md border-t border-border"
+          className="lg:hidden overflow-hidden bg-background/95 backdrop-blur-md border-t border-border max-h-[calc(100vh-4rem)] overflow-y-auto"
           initial={{ height: 0 }}
           animate={{ height: isOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="px-4 py-4 space-y-2">
+          <div className="px-4 py-4 space-y-2 pb-6">
             {navItems.map((item, i) => (
               <motion.div
                 key={item.href}

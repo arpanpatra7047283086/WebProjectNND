@@ -27,7 +27,6 @@ export function AboutSection() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Main About */}
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16"
           variants={containerVariants}
@@ -40,10 +39,10 @@ export function AboutSection() {
               About Neoplas Fintech
             </h2>
             <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-              We are Neoplas Fintech—The World of Fintech. Our vision is to assist in providing every underserved segment of the population access to financial services.
+              We are Neoplas Fintech - The World of Fintech. Our vision is to assist in providing every underserved segment of the population access to financial services.
             </p>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              We understand consumer needs and provide services tailored to their lifestyle. We're building an unparalleled platform that brings financial services to your doorstep, regardless of your location.
+              We understand consumer needs and provide services tailored to their lifestyle. We&apos;re building an unparalleled platform that brings financial services to your doorstep, regardless of your location.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -54,11 +53,8 @@ export function AboutSection() {
             </motion.button>
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl opacity-20 blur-3xl"></div>
+          <motion.div variants={itemVariants} className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl opacity-20 blur-3xl" />
             <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 min-h-96 flex items-center justify-center">
               <div className="text-center">
                 <div className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-2">
@@ -70,7 +66,6 @@ export function AboutSection() {
           </motion.div>
         </motion.div>
 
-        {/* Values */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 40 }}
@@ -122,7 +117,6 @@ export function AboutSection() {
           </div>
         </motion.div>
 
-        {/* Stats */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           initial={{ opacity: 0 }}

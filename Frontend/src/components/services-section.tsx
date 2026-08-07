@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from '@/components/app-link'
 import Image from '@/components/app-image'
 import { Zap, Lock, TrendingUp } from 'lucide-react'
 
@@ -9,31 +10,37 @@ const services = [
     image: '/services/recharges.png',
     title: 'Mobile Recharge',
     description: 'Mobile, DTH, and data card recharges in seconds',
+    href: '/services/mobile-recharge',
   },
   {
     image: '/services/utility.png',
     title: 'Utility Payments',
     description: 'Pay electricity, water, gas, and all utility bills',
+    href: '/services/bill-payments',
   },
   {
     image: '/services/aeps.png',
     title: 'AePS',
     description: 'Aadhaar-enabled payment and cash withdrawal services',
+    href: '/services/aeps',
   },
   {
     image: '/services/matm.png',
     title: 'Micro ATM',
     description: 'Instant cash withdrawal with card-based mATM',
+    href: '/services/micro-atm',
   },
   {
     image: '/services/collection.png',
     title: 'Collection',
     description: 'Seamless payment collection for your business',
+    href: '/services/collection',
   },
   {
     image: '/services/pancard.png',
     title: 'PAN Card',
     description: 'Apply for new and duplicate PAN cards with ease',
+    href: '/services/pancard',
   },
 ]
 
@@ -110,20 +117,24 @@ export function ServicesSection() {
               whileHover={{ y: -5, boxShadow: '0 20px 25px -5 rgba(0, 102, 255, 0.1)' }}
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center"
             >
-              <motion.div
-                className="mb-4"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src={service.image || "/placeholder.svg"}
-                  alt={service.title}
-                  width={112}
-                  height={112}
-                  className="w-28 h-28 object-contain"
-                />
-              </motion.div>
-              <h3 className="text-xl font-bold text-foreground mb-2">{service.title}</h3>
-              <p className="text-muted-foreground">{service.description}</p>
+              <Link href={service.href}>
+                <div className="flex flex-col items-center text-center">
+                  <motion.div
+                    className="mb-4"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={112}
+                      height={112}
+                      className="w-28 h-28 object-contain"
+                    />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

@@ -10,6 +10,8 @@ export default function BillPaymentsPage() {
       eyebrow="Pay All Bills"
       title="Bill Payments"
       description="Pay electricity, water, gas, broadband, and other utility bills in one place with instant confirmation and reminders."
+      image="/services/utility.png"
+      imageAlt="Utility payment service illustration"
       features={[
         { icon: Lightbulb, title: 'Electricity Bills', description: 'Pay bills for every state electricity board with instant receipts.' },
         { icon: Droplet, title: 'Water & Utilities', description: 'Clear water, municipal, and other utility dues without the queues.' },

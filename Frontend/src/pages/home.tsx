@@ -25,25 +25,25 @@ const services = [
     image: '/services/aeps.png',
     title: 'AePS',
     description: 'Aadhaar-enabled payment and cash withdrawal services.',
-    href: '/services'
+    href: '/services/aeps'
   },
   {
     image: '/services/matm.png',
     title: 'Micro ATM',
     description: 'Instant cash withdrawal with card-based mATM.',
-    href: '/services'
+    href: '/services/micro-atm'
   },
   {
     image: '/services/collection.png',
     title: 'Collection',
     description: 'Seamless payment collection for your business.',
-    href: '/services'
+    href: '/services/collection'
   },
   {
     image: '/services/pancard.png',
     title: 'PAN Card',
     description: 'Apply for new and duplicate PAN cards with ease.',
-    href: '/services'
+    href: '/services/pancard'
   },
 ]
 
@@ -399,7 +399,7 @@ export default function HomePage() {
                         className="mb-4"
                       >
                         <Image
-                          src={service.image || "/placeholder.svg"}
+                          src={service.image}
                           alt={service.title}
                           width={112}
                           height={112}
@@ -766,7 +766,7 @@ export default function HomePage() {
                 className="group flex items-center justify-center rounded-2xl border border-border bg-white p-6 h-32 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/40"
               >
                 <img
-                  src={partner.src || '/placeholder.svg'}
+                  src={partner.src}
                   alt={`${partner.name} logo`}
                   className="max-h-16 w-auto max-w-full object-contain grayscale opacity-80 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
                   loading="lazy"

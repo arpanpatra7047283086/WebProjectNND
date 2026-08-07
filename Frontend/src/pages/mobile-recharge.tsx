@@ -10,6 +10,8 @@ export default function MobileRechargePage() {
       eyebrow="Instant Recharges"
       title="Mobile & DTH Recharge"
       description="Top up prepaid mobiles, DTH connections, and data cards for every major operator across India in just a few seconds."
+      image="/services/recharges.png"
+      imageAlt="Mobile recharge service illustration"
       features={[
         { icon: Zap, title: 'Instant Top-Up', description: 'Recharges are processed in real time with immediate confirmation on every transaction.' },
         { icon: Tv, title: 'All DTH Operators', description: 'Recharge Tata Play, Airtel, Dish TV, d2h, and more from a single dashboard.' },
