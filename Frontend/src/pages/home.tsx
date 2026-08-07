@@ -130,6 +130,13 @@ const partners = [
   { name: 'Book Nearby', src: '/partners/cp12.jpeg', href: 'https://www.booknearbys.com' },
 ]
 
+const partnerAccents = [
+  'from-sky-400/25 via-cyan-400/15 to-emerald-400/20',
+  'from-rose-400/25 via-orange-400/15 to-amber-400/20',
+  'from-violet-400/25 via-fuchsia-400/15 to-pink-400/20',
+  'from-lime-400/25 via-green-400/15 to-emerald-400/20',
+]
+
 const journeyMilestones = [
   { year: '2018', title: 'Our Inception', description: 'Neoplas Fintech was founded with a bold vision to redefine the future of finance in India.' },
   { year: '2019', title: 'Strategic Expansion', description: 'We extended our services, establishing a strong presence in major cities across India.' },
@@ -763,12 +770,15 @@ export default function HomePage() {
                 transition={{ delay: (index % 4) * 0.05, duration: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
-                className="group flex items-center justify-center rounded-2xl border border-border bg-white p-6 h-32 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/40"
+                className="group relative flex items-center justify-center overflow-hidden rounded-3xl border border-border bg-card p-6 h-32 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/40"
               >
+                <div className={`absolute inset-0 bg-gradient-to-br ${partnerAccents[index % partnerAccents.length]} opacity-100`} />
+                <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" />
+                <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary via-accent to-primary opacity-80" />
                 <img
                   src={partner.src}
                   alt={`${partner.name} logo`}
-                  className="max-h-16 w-auto max-w-full object-contain grayscale opacity-80 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="relative z-10 max-h-16 w-auto max-w-full object-contain grayscale opacity-85 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
                   loading="lazy"
                 />
               </motion.a>

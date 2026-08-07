@@ -22,6 +22,13 @@ const badges = [
   { name: 'GoDaddy Verified & Secured', src: '/partners/footer2.jpeg' },
 ]
 
+const partnerAccents = [
+  'from-sky-400/25 via-cyan-400/15 to-emerald-400/20',
+  'from-rose-400/25 via-orange-400/15 to-amber-400/20',
+  'from-violet-400/25 via-fuchsia-400/15 to-pink-400/20',
+  'from-lime-400/25 via-green-400/15 to-emerald-400/20',
+]
+
 export function PartnersSection() {
   return (
     <section className="bg-background py-20 px-4 sm:px-6 lg:px-8">
@@ -69,12 +76,17 @@ export function PartnersSection() {
               transition={{ duration: 0.4, delay: (index % 4) * 0.05 }}
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
-              className="group flex items-center justify-center rounded-2xl border border-border bg-white p-6 h-32 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/40"
+              className={`group relative flex items-center justify-center overflow-hidden rounded-3xl border border-border bg-card p-6 h-32 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/40`}
             >
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${partnerAccents[index % partnerAccents.length]} opacity-100 transition-opacity duration-300 group-hover:opacity-100`}
+              />
+              <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" />
+              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary via-accent to-primary opacity-80" />
               <img
                 src={partner.src}
                 alt={`${partner.name} logo`}
-                className="max-h-16 w-auto max-w-full object-contain grayscale opacity-80 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                className="relative z-10 max-h-16 w-auto max-w-full object-contain grayscale opacity-85 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
                 loading="lazy"
               />
             </motion.div>
@@ -87,15 +99,20 @@ export function PartnersSection() {
             Security &amp; Compliance
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            {badges.map((badge) => (
+            {badges.map((badge, index) => (
               <div
                 key={badge.name}
-                className="flex items-center justify-center rounded-xl border border-border bg-white px-8 py-4 shadow-sm"
+                className={`relative flex items-center justify-center overflow-hidden rounded-2xl border border-border px-8 py-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                  index === 0
+                    ? 'bg-gradient-to-r from-sky-50 via-cyan-50 to-emerald-50'
+                    : 'bg-gradient-to-r from-fuchsia-50 via-pink-50 to-amber-50'
+                }`}
               >
+                <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px]" />
                 <img
                   src={badge.src}
                   alt={`${badge.name} badge`}
-                  className="max-h-12 w-auto object-contain"
+                  className="relative z-10 max-h-12 w-auto object-contain"
                   loading="lazy"
                 />
               </div>
